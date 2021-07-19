@@ -95,6 +95,46 @@
           </li>
             <!--End Tender management -->
 
+            <!-- Country management -->
+            <li class="nav-item has-treeview">
+            <a href="{{url('country')}}" class="nav-link">
+            <i class="fa fa-file" aria-hidden="true"></i>
+              <p>
+                Country
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+           <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('country')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Manage Country</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+            <!--End Country management -->
+
+            <!-- Location management -->
+            <li class="nav-item has-treeview">
+            <a href="{{url('location')}}" class="nav-link">
+            <i class="fa fa-file" aria-hidden="true"></i>
+              <p>
+                Location
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+           <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('location')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Manage Location</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+            <!--End Location management -->
+
             <!-----Order ---->
             <!-- manage User -->
           <li class="nav-item has-treeview">

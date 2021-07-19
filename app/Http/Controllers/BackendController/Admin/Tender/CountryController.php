@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\BackendController\Admin\Tender;
 
 use App\Http\Controllers\Controller;
-use App\Models\Tender\Location;
+use App\Models\Tender\Country;
 use Illuminate\Http\Request;
 
-class LocationController extends Controller
+class CountryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class LocationController extends Controller
      */
     public function index()
     {
-        $locations = Location::all();
+        $countries = Country::all();
 
-        return view('backend.admin.tender.location.alllocation', compact('locations'));
+       return view('backend.admin.tender.country.allcountry', compact('countries'));
     }
 
     /**
@@ -27,9 +27,8 @@ class LocationController extends Controller
      */
     public function create()
     {
-        $locations = Location::all();
-
-        return view('backend.admin.tender.location.alllocation', compact('locations'));
+        $countries = Country::all();
+        return view('backend.admin.tender.country.allcountry', compact('countries'));
     }
 
     /**
@@ -40,8 +39,9 @@ class LocationController extends Controller
      */
     public function store(Request $request)
     {
-        $location = Location::create(['name'=>$request->location]);
-        return redirect('location')->with('success', 'Location has been Created !');
+       $country = Country::create(['name' => $request->country]);
+
+       return redirect()->back();
     }
 
     /**
@@ -52,7 +52,7 @@ class LocationController extends Controller
      */
     public function show($id)
     {
-        //
+        return redirect()->back();
     }
 
     /**
@@ -63,9 +63,9 @@ class LocationController extends Controller
      */
     public function edit($id)
     {
-        $editData = Location::where('id', $id)->get()->first();
+        $countrydata = Country::where('id', $id)->first();
 
-        return view('backend.admin.tender.location.edit', compact('editData'));
+        return view('backend.admin.tender.country.edit', compact('countrydata'));
     }
 
     /**
@@ -77,8 +77,9 @@ class LocationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $update = Location::where('id', $id)->update(['name'=>$request->location]);
-        return redirect('location')->with('success', 'Location has been Updated !');
+        $update = Country::where('id', $id)->update(['name'=>$request->name]);
+        return redirect('country');
+
     }
 
     /**
@@ -89,7 +90,8 @@ class LocationController extends Controller
      */
     public function destroy($id)
     {
-        $delete = Location::where('id', $id)->delete();
-        return redirect('location')->with('success', 'Location has been Updated !');
+        $deleteCountry = Country::where('id', $id)->delete();
+
+        return redirect('country');
     }
 }

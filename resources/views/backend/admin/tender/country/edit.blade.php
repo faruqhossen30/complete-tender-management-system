@@ -23,7 +23,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-        <form action="{{url('location/'.$editData->id)}}" method="POST" class="form-horizontal ">
+        <form action="{{url('country/'.$countrydata->id)}}" method="POST" class="form-horizontal ">
                 @csrf
                 @method('PUT')
                 <div class="row">
@@ -31,7 +31,7 @@
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-3 col-form-label">Location</label>
                             <div class="col-sm-9">
-                            <input value="{{$editData->name}}" type="text" name="location" class="form-control" id="inputEmail3" placeholder="Enter Location">
+                            <input value="{{$countrydata->name}}" type="text" name="name" class="form-control" id="inputEmail3" placeholder="Enter Location">
                             </div>
                         </div>
                     </div>
