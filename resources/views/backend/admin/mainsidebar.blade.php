@@ -135,6 +135,46 @@
           </li>
             <!--End Location management -->
 
+            <!-- Location management -->
+            <li class="nav-item has-treeview">
+            <a href="{{url('type')}}" class="nav-link">
+            <i class="fa fa-file" aria-hidden="true"></i>
+              <p>
+                Type
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+           <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('type')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Manage Type</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+            <!--End Location management -->
+
+            <!-- Category management -->
+            <li class="nav-item has-treeview">
+            <a href="{{url('category')}}" class="nav-link">
+            <i class="fa fa-file" aria-hidden="true"></i>
+              <p>
+                Category
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+           <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('category')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Manage Category</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+            <!--End Category management -->
+
             <!-----Order ---->
             <!-- manage User -->
           <li class="nav-item has-treeview">
