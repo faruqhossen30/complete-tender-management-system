@@ -16,14 +16,14 @@ class CreateTendersTable extends Migration
         Schema::create('tenders', function (Blueprint $table) {
             $table->id();
             $table->integer('tenderID');
+            $table->integer('tender_type_id')->nullable();
+            $table->integer('category_id')->nullable();
+            $table->integer('department_id');
+            $table->integer('country_id')->nullable();
+            $table->integer('location_id')->nullable();
             $table->text('description');
             $table->double('tenderSecurity');
             $table->double('tenderBudget');
-            $table->string('department');
-            $table->string('country')->nullable();
-            $table->string('location')->nullable();
-            $table->string('type')->nullable();
-            $table->string('category')->nullable();
             $table->dateTime('lastDate');
             $table->integer('user_id')->nullable();
             $table->timestamps();

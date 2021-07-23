@@ -36,11 +36,9 @@
                     <div class="col-4 form-group">
                         <label for="selectdeparment">Tender Type</label>
                         <select name="type" class="form-control" id="selectdeparment" style="width:100%;height:38px;">
-
-                            <option value="tendrtype1">Tender Type 1</option>
-                            <option value="tendrtype2">Tender Type 2</option>
-                            <option value="tendrtype3">Tender Type 3</option>
-                            <option value="tendrtype4">Tender Type 4</option>
+                            @foreach ($types as $type)
+                                <option value="{{$type->id}}">{{$type->name}}</option>
+                            @endforeach
 
                         </select>
                     </div>
@@ -49,10 +47,9 @@
                         <label for="txtlocation">Category</label>
                         <select name="category" class="form-control" id="txtlocation" style="width:100%;height:38px;">
 
-                            <option value="category1">Catagory 1</option>
-                            <option value="category2">Catagory 2</option>
-                            <option value="category3">Catagory 3</option>
-                            <option value="category4">Catagory 4</option>
+                            @foreach ($categories as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
 
                         </select>
                     </div>
@@ -61,21 +58,29 @@
                 <div class="row">
 
                     <div class="col-4 form-group">
-                        <label for="departmentID">Department</label>
-                        <input type="text" class="form-control" name="department" id="departmentID" placeholder="Enter Tender id">
+                        <label for="txtdepartment">Department</label>
+                        <select name="department" class="form-control" id="txtdepartment" style="width:100%;height:38px;">
+                            @foreach ($departments as $department)
+                                <option value="{{$department->id}}">{{$department->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
 
                     <div class="col-4 form-group">
                         <label for="countryID">Country</label>
                         <select name="country" class="form-control" id="countryID" style="width:100%;height:38px;">
-                            <option value="Option">Bangladesh</option>
+                            @foreach ($countries as $country)
+                            <option value="{{$country->id}}" >{{$country->name}}</option>
+                            @endforeach
                         </select>
                     </div>
 
                     <div class="col-4 form-group">
                         <label for="locationID">Location</label>
                         <select name="location" class="form-control" id="countryID" style="width:100%;height:38px;">
-                            <option value="Option">Bangladesh</option>
+                            @foreach ($locations as $location)
+                            <option value="{{$location->id}}" >{{$location->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>

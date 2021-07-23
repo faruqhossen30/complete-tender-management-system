@@ -3,7 +3,12 @@
 namespace App\Http\Controllers\BackendController\Admin\Tender;
 
 use App\Http\Controllers\Controller;
+use App\Models\Tender\Category;
+use App\Models\Tender\Country;
+use App\Models\Tender\Department;
+use App\Models\Tender\Location;
 use App\Models\Tender\Tender;
+use App\Models\Tender\Type;
 use Illuminate\Http\Request;
 
 class TenderController extends Controller
@@ -29,7 +34,14 @@ class TenderController extends Controller
      */
     public function create()
     {
-        return view('backend.admin.tender.upload');
+        $types = Type::all();
+        $categories = Category::all();
+        $departments = Department::all();
+        $countries = Country::all();
+        $locations = Location::all();
+
+
+        return view('backend.admin.tender.upload', compact('types', 'categories', 'departments',  'countries', 'locations'));
     }
 
     /**
@@ -42,11 +54,11 @@ class TenderController extends Controller
     {
         $data = [
             'tenderID'      => $request->tenderID,
-            'type'   => $request->type,
-            'category'   => $request->category,
-            'department'   => $request->department,
-            'country'   => $request->country,
-            'location'   => $request->location,
+            'tender_type_id'   => $request->type,
+            'category_id'   => $request->category,
+            'department_id'   => $request->department,
+            'country_id'   => $request->country,
+            'location_id'   => $request->location,
             'description'   => $request->description,
             'tenderSecurity'   => $request->tenderSecurity,
             'tenderBudget'   => $request->tenderBudget,
@@ -54,10 +66,10 @@ class TenderController extends Controller
             'user_id'   => auth()->user()->id,
         ];
 
-        // Tender::create($data);
+        $upload = Tender::create($data);
 
-        // return redirect('tender');
-        return $data;
+        return redirect('tender');
+        // return $data;
     }
 
     /**
@@ -88,9 +100,14 @@ class TenderController extends Controller
     public function edit($id)
     {
         $tender = Tender::where('id', $id)->get()->first();
+        $types = Type::all();
+        $categories = Category::all();
+        $departments = Department::all();
+        $countries = Country::all();
+        $locations = Location::all();
 
         // return $tender;
-        return view("backend.admin.tender.edittender", compact('tender'));
+        return view("backend.admin.tender.edittender", compact('tender','types', 'categories', 'departments',  'countries', 'locations'));
     }
 
     /**
@@ -104,16 +121,16 @@ class TenderController extends Controller
     {
         $data = [
             'tenderID'      => $request->tenderID,
-            'type'   => $request->type,
-            'category'   => $request->category,
-            'department'   => $request->department,
-            'country'   => $request->country,
-            'location'   => $request->location,
+            'tender_type_id'   => $request->type,
+            'category_id'   => $request->category,
+            'department_id'   => $request->department,
+            'country_id'   => $request->country,
+            'location_id'   => $request->location,
             'description'   => $request->description,
             'tenderSecurity'   => $request->tenderSecurity,
             'tenderBudget'   => $request->tenderBudget,
             'lastDate'   => $request->lastDate,
-            'user_id'   => auth()->user()->id
+            'user_id'   => auth()->user()->id,
         ];
 
         $update = Tender::where('id', $id)->update($data);

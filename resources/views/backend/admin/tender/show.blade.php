@@ -31,7 +31,7 @@
                 <tbody>
 
                     <tr>
-                    <td>2.</td>
+                    <td>1.</td>
                     <td>Tender ID</td>
                     <td><strong> {{$tender->tenderID}}</strong></td>
                   </tr>
@@ -39,31 +39,32 @@
                     <tr>
                     <td>2.</td>
                     <td>Tender Type</td>
-                    <td><strong> {{$tender->type}}</strong></td>
+                    {{-- <td><strong> {{$tender->tender_type_id}}</strong></td> --}}
+                    <td><strong> {{$tender->tenderType->name}}</strong></td>
                   </tr>
 
                   <tr>
                     <td>3.</td>
                     <td>Tender Catagory</td>
-                    <td><strong>{{$tender->category}}</strong></td>
+                    <td><strong>{{$tender->tenderCategory->name}}</strong></td>
                   </tr>
 
                   <tr>
                     <td>5.</td>
                     <td>Deparment</td>
-                    <td><strong>{{$tender->department}}</strong></td>
+                    <td><strong>{{$tender->tenderDepartment->name}}</strong></td>
                   </tr>
 
                   <tr>
                     <td>5.</td>
                     <td>Country</td>
-                    <td><strong>{{$tender->country}}</strong></td>
+                    <td><strong>{{$tender->tenderCountry->name}}</strong></td>
                   </tr>
 
                   <tr>
                     <td>5.</td>
                     <td>Location</td>
-                    <td><strong>{{$tender->location}}</strong></td>
+                    <td><strong>{{$tender->tenderLocation->name}}</strong></td>
                   </tr>
                     <tr>
                     <td>4.</td>
@@ -79,7 +80,7 @@
                   <tr>
                     <td>7.</td>
                     <td>Budget Price</td>
-                    <td><strong>{{$tender->budget}}</strong></td>
+                    <td><strong>{{$tender->tenderBudget}}</strong></td>
                   </tr>
 
                   <tr>
