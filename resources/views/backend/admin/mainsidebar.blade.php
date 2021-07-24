@@ -68,19 +68,19 @@
             </a>
            <ul class="nav nav-treeview">
               <li class="nav-item">
-              <a href="{{url('tender')}}" class="nav-link">
+              <a href="{{url('admin/tender')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>All tender</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('tender/create')}}" class="nav-link">
+                <a href="{{url('admin/tender/create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Uoload tender</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('tender')}}" class="nav-link">
+                <a href="{{url('admin/tender')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Manage Tender</p>
                 </a>
@@ -97,7 +97,7 @@
 
             <!-- Country management -->
             <li class="nav-item has-treeview">
-            <a href="{{url('country')}}" class="nav-link">
+            <a href="{{url('admin/country')}}" class="nav-link">
             <i class="fa fa-file" aria-hidden="true"></i>
               <p>
                 Country
@@ -106,7 +106,7 @@
             </a>
            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('country')}}" class="nav-link">
+                <a href="{{url('admin/country')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Manage Country</p>
                 </a>
@@ -117,7 +117,7 @@
 
             <!-- Location management -->
             <li class="nav-item has-treeview">
-            <a href="{{url('location')}}" class="nav-link">
+            <a href="{{url('admin/location')}}" class="nav-link">
             <i class="fa fa-file" aria-hidden="true"></i>
               <p>
                 Location
@@ -126,7 +126,7 @@
             </a>
            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('location')}}" class="nav-link">
+                <a href="{{url('admin/location')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Manage Location</p>
                 </a>
@@ -137,7 +137,7 @@
 
             <!-- Location management -->
             <li class="nav-item has-treeview">
-            <a href="{{url('type')}}" class="nav-link">
+            <a href="{{url('admin/type')}}" class="nav-link">
             <i class="fa fa-file" aria-hidden="true"></i>
               <p>
                 Type
@@ -146,7 +146,7 @@
             </a>
            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('type')}}" class="nav-link">
+                <a href="{{url('admin/type')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Manage Type</p>
                 </a>
@@ -157,7 +157,7 @@
 
             <!-- Category management -->
             <li class="nav-item has-treeview">
-            <a href="{{url('category')}}" class="nav-link">
+            <a href="{{url('admin/category')}}" class="nav-link">
             <i class="fa fa-file" aria-hidden="true"></i>
               <p>
                 Category
@@ -166,7 +166,7 @@
             </a>
            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{url('category')}}" class="nav-link">
+                <a href="{{url('admin/category')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Manage Category</p>
                 </a>
@@ -203,7 +203,7 @@
             <!--End manage User -->
             <!-- cliend management -->
             <li class="nav-item has-treeview">
-            <a href="{{url('/client')}}" class="nav-link">
+            <a href="{{url('admin/client')}}" class="nav-link">
             <i class="material-icons" style="font-size:16px;">&#xe7fb;</i>
               <p>
                 Client Management
@@ -218,7 +218,7 @@
                 </a>
               </li> -->
               <li class="nav-item">
-              <a href="{{url('/client')}}" class="nav-link">
+              <a href="{{url('admin/client')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Manage Client</p>
                 </a>

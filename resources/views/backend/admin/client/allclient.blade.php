@@ -20,15 +20,6 @@
         <div class="card-header">
         <h3 class="card-title">Client Management Table</h3> <br>
 
-        @auth
-
-        <h1>Just for test</h1>
-        @endauth
-
-        @guest
-            You are guiest
-        @endguest
-
         </div>
         <!-- /.card-header -->
         <div class="card-body table-responsive p-0">
@@ -55,21 +46,25 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($users as $user)
+            @foreach($clients as $client)
             <tr>
-                <td>{{$user->id}}</td>
-                <td>{{$user->companyname}}</td>
-                <td>{{$user->email}}</td>
-                <td>{{$user->phone}}</td>
-                <td>{{$user->division}}</td>
+                <td>{{$client->id}}</td>
+                <td>{{$client->name}}</td>
+                <td>{{$client->email}}</td>
+                <td>{{$client->phone}}</td>
+                <td>sdfk</td>
                 <td>
-                <a href="{{url('client/'.$user->id)}}" class="btn btn-primary btn-sm">View</a>
+                    <a href="{{url('admin/client/'.$client->id.'/edit')}}" class="btn btn-success btn-sm">Active</a>
+                    <a href="{{url('admin/client/'.$client->id)}}" class="btn btn-primary btn-sm">View</a>
+
+
+                    {{-- <a href="{{url('client/'.$user->id)}}" class="btn btn-primary btn-sm">View</a>
                     <a href="{{url('client/'.$user->id.'/edit')}}" class="btn btn-warning btn-sm">Edit</a>
                     <form action="{{url('client/'.$user->id)}}" method="post" style="display:inline-block">
                         @csrf
                         @method('DELETE')
                         <button type="submit" onclick="confirm('Sure ? Want to delete company ?')" class="btn btn-danger btn-sm">Delete</button>
-                    </form>
+                    </form> --}}
                 </td>
                 </td>
             </tr>

@@ -135,7 +135,7 @@ class TenderController extends Controller
 
         $update = Tender::where('id', $id)->update($data);
 
-        return redirect('/tender')->with('success', 'Tender has been Updated !');
+        return redirect('admin/tender')->with('success', 'Tender has been Updated !');
     }
 
     /**
@@ -149,6 +149,6 @@ class TenderController extends Controller
         // echo $id;
          $delete = Tender::where('id', $id)->delete();
 
-         return redirect('/tender')->with('success', 'Tender has been deleted !');
+         return redirect('admin/tender')->with('success', 'Tender has been deleted !');
     }
 }

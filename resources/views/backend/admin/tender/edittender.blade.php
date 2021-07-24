@@ -24,7 +24,7 @@
         </div>
         {{-- <form Action="{{route('tender.store')}}" method="POST"> --}}
         {{-- <form action="{{url('tender/'.$tender->id)}}" method="POST"> --}}
-        <form action="{{url('tender/'.$tender->id)}}" method="POST">
+        <form action="{{url('admin/tender/'.$tender->id)}}" method="POST">
             @csrf
             @method('PUT')
             <div class="card-body">

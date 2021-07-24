@@ -55,9 +55,9 @@
                             <td>{{$tender->created_at}}</td>
                             <td>{{$tender->lastDate}}</td>
                             <td>
-                            <a href="{{url('/tender/'.$tender->id)}}" class="btn btn-success btn-sm">View</a>
-                                <a href="{{url('/tender/'.$tender->id.'/edit')}}" class="btn btn-warning btn-sm">Edit</a>
-                                <form action="{{url('tender/'.$tender->id)}}" method="post" style="display:inline-block">
+                            <a href="{{url('admin/tender/'.$tender->id)}}" class="btn btn-success btn-sm">View</a>
+                                <a href="{{url('admin/tender/'.$tender->id.'/edit')}}" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="{{url('admin/tender/'.$tender->id)}}" method="post" style="display:inline-block">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" onclick="confirm('Sure ? Want to delete Tender ?')" class="btn btn-danger btn-sm">Delete</button>

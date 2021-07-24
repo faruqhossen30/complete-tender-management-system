@@ -92,8 +92,8 @@
                 </tbody>
               </table>
 
-              <a href="{{url('/tender/'.$tender->id.'/edit')}}" class="btn btn-primary"><b>Edit</b></a>
-              <form action="{{url('tender/'.$tender->id)}}" method="post" style="display:inline-block">
+              <a href="{{url('admin/tender/'.$tender->id.'/edit')}}" class="btn btn-primary"><b>Edit</b></a>
+              <form action="{{url('admin/tender/'.$tender->id)}}" method="post" style="display:inline-block">
                 @csrf
                 @method('DELETE')
                 <button type="submit" onclick="confirm('Sure ? Want to delete company ?')" class="btn btn-danger">Delete</button>

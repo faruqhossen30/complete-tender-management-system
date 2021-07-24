@@ -24,6 +24,41 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="mobile" class="col-md-4 col-form-label text-md-right">{{ __('Mobile') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="mobile" type="number" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile" autofocus>
+
+                                @error('mobile')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="vendorID" class="col-md-4 col-form-label text-md-right">{{ __('Customer Type') }}</label>
+
+                            <div class="col-md-6">
+                                {{-- <input id="vendor" type="text" class="form-control @error('vendor') is-invalid @enderror" name="vendor" value="{{ old('vendor') }}" required autocomplete="vendor" autofocus> --}}
+
+                                <select name="vendor" id="vendorID" class="custom-select" @error('vendor') is-invalid @enderror" value="{{ old('vendor') }}" required autocomplete="vendor" autofocus >
+                                    <option value="" selected>Select </option>
+                                    <option value="local vendor">Local Vendor </option>
+                                    <option value="foreign vendor">Foreign Vendor </option>
+                                    <option value="manufacturer">Manufacturer </option>
+                                    <option value="supplier">Supplier </option>
+                                </select>
+
+                                @error('vendor')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
 
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
