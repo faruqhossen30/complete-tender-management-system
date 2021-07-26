@@ -15,6 +15,7 @@ use App\Http\Controllers\BackendController\Admin\Tender\DepartmentController; //
 use App\Http\Controllers\BackendController\User\UserHomeController;
 use App\Http\Controllers\BackendController\Admin\ClientListController;
 // Controlles for Client dashboard
+use App\Http\Controllers\UserProfleController;
 
 // Route for authincate Admin area
 Auth::routes();
@@ -37,7 +38,9 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
 // For User Route
 Route::middleware(['auth', 'is_client'])->prefix('user')->group(function () {
     Route::get('/', [UserHomeController::class, 'index']);
-
+    Route::get('profile', [UserProfleController::class, 'index'])->name('profile');
+    Route::get('profile/update', [UserProfleController::class, 'create'])->name('profile.update');
+    Route::post('profile/update', [UserProfleController::class, 'store'])->name('profile.store');
 
 });
 
