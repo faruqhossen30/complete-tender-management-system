@@ -38,7 +38,7 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
 // For User Route
 Route::middleware(['auth', 'is_client'])->prefix('user')->group(function () {
     Route::get('/', [UserHomeController::class, 'index']);
-    Route::get('profile', [UserProfleController::class, 'index'])->name('profile');
+    Route::get('profile', [UserProfleController::class, 'profile'])->name('profile');
     Route::get('profile/update', [UserProfleController::class, 'create'])->name('profile.update');
     Route::post('profile/update', [UserProfleController::class, 'store'])->name('profile.store');
 

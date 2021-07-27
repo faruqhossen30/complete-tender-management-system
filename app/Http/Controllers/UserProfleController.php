@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\UserProfile;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UserProfleController extends Controller
 {
@@ -15,7 +16,29 @@ class UserProfleController extends Controller
      */
     public function index()
     {
-        //
+
+        // $profiles = UserProfile::all();
+
+        // return $profiles;
+
+        // return view('backend.user.profile.test', compact('profiles'));
+        return view('backend.user.profile.account');
+    }
+    public function profile()
+    {
+        $userID = auth()->user()->id;
+
+        $profile = UserProfile::where('user_id', $userID)->first();
+
+        $user = User::where('id', $userID)->first();
+
+        // return $profile;
+        // return $user;
+
+        // return view('backend.user.profile.test', compact('profiles'));
+
+
+        return view('backend.user.profile.account', compact('user', 'profile'));
     }
 
     /**
@@ -25,7 +48,7 @@ class UserProfleController extends Controller
      */
     public function create()
     {
-        return view('backend.user.profile.profile');
+        return view('backend.user.profile.profileupdate');
     }
 
     /**
@@ -128,27 +151,6 @@ class UserProfleController extends Controller
 
         return "ok";
 
-
-
-
-        // $user_profile = new UserProfile();
-
-        // $trade_licence_no = $request->trade_licence_no;
-        // $pin_no = $request->pin_no;
-        // $bin_no = $request->bin_no;
-        // $nid_no = $request->nid_no;
-
-        // $trade_licence = $request->file('trade_licence_img');
-
-        // $image_name=Str::random(10);
-        // $ext=strtolower($trade_licence->getClientOriginalExtension());
-        // $image_full_name=$image_name.'.'.$ext;
-        // $upload_path='doc/licence/';
-        // $image_url=$upload_path.$image_full_name;
-        // $success=$trade_licence->move($upload_path,$image_full_name);
-        // $user_profile->trade_licence_img=$image_url;
-
-        // $user_profile->save();
 
 
     }

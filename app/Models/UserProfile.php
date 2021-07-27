@@ -5,12 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\User;
+
 class UserProfile extends Model
 {
     use HasFactory;
 
 
     protected $table = 'user_profiles';
+    public $timestamps = true;
     protected $fillable = [
         'user_id',
         'logo',
@@ -23,7 +26,10 @@ class UserProfile extends Model
         'bin_img',
         'nid_img',
     ];
-    public $timestamps = true;
 
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 
 }

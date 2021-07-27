@@ -43,9 +43,9 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="{{route('profile')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>My Profile</p>
+                    <p>My Information</p>
                 </a>
                 </li>
                 <li class="nav-item">
