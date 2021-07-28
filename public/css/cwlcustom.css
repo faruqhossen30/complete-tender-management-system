@@ -1,0 +1,50 @@
+/* For Top bar */
+.cwl-bg{
+    background-color: #BC1F2D;
+}
+.cwl-info p{
+    color: white;
+}
+.cwl-social ul li a{
+    color: white !important;
+}
+
+.navbar-brand img{
+    height: 50px;
+    widows: 150px;
+}
+
+.navbar-nav a{
+    color: white !important;
+    text-transform: uppercase;
+}
+/* For Slider */
+.cwl-slider img{
+    display: block;
+    height: 520px;
+    object-fit: cover;
+    opacity: 30%;
+}
+.carousel-item{
+    background:black;
+}
+
+.carousel-caption{
+    transform: translateY(-50%);
+    bottom: initial;
+    top: 50%;
+}
+
+.cwl-btn{
+    background: none;
+    border: 2px #BC1F2D solid;
+    border-radius: 0;
+}
+.cwl-btn:hover{
+    background: #BC1F2D;
+    border-color: #BC1F2D;
+}
+.cwl-active{
+    background-color: #BC1F2D;
+}
+

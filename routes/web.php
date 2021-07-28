@@ -13,7 +13,9 @@ use App\Http\Controllers\BackendController\Admin\Tender\CategoryController; // o
 use App\Http\Controllers\BackendController\Admin\Tender\TypeController; // ok
 use App\Http\Controllers\BackendController\Admin\Tender\DepartmentController; // ok
 use App\Http\Controllers\BackendController\User\UserHomeController;
+// FontEndController
 use App\Http\Controllers\BackendController\Admin\ClientListController;
+use App\Http\Controllers\FrontEndController\HomePageController;
 // Controlles for Client dashboard
 use App\Http\Controllers\UserProfleController;
 
@@ -45,3 +47,6 @@ Route::middleware(['auth', 'is_client'])->prefix('user')->group(function () {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Font-End Route
+
+Route::get('/', [HomePageController::class, 'homepage'])->name('homepage');
