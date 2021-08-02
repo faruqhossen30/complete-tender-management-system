@@ -19,7 +19,14 @@
     <div class="card card-secondary">
         <div class="card-header">
         <h3 class="card-title">Profile Management Table</h3> <br>
-
+            @if (session('profileUpdate'))
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>{{session('profileUpdate')}}</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            @endif
         </div>
         <!-- /.card-header -->
         <div class="card-body">

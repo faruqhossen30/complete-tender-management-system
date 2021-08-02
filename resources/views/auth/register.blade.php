@@ -41,9 +41,31 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('mobile') }}" required autocomplete="address" autofocus>
+                                <input id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address" autofocus>
 
                                 @error('address')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="userCountryID" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
+
+                            <div class="col-md-6">
+                                {{-- <input id="vendor" type="text" class="form-control @error('vendor') is-invalid @enderror" name="vendor" value="{{ old('vendor') }}" required autocomplete="vendor" autofocus> --}}
+
+                                <select name="user_country" id="userCountryID" class="custom-select" @error('user_country') is-invalid @enderror" value="{{ old('user_country') }}" required autocomplete="vendor" autofocus >
+                                    <option value="" selected>Select </option>
+                                    <option value="Afganistan">Afganistal</option>
+                                    <option value="Bangladesh">Bangladesh</option>
+                                    <option value="Canada">Canada </option>
+                                    <option value="Denmark">Denmark </option>
+                                </select>
+
+                                @error('user_country')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

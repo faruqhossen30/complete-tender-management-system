@@ -20,7 +20,7 @@ class TenderController extends Controller
      */
     public function index()
     {
-        $tenders = Tender::all();
+        $tenders = Tender::latest()->get();
 
         return view('backend.admin.tender.alltender', compact('tenders'));
         // return $tenders;
@@ -68,7 +68,7 @@ class TenderController extends Controller
 
         $upload = Tender::create($data);
 
-        return redirect('tender');
+        return redirect('admin/tender')->with('success', 'Tender has been uploaded successfully! ');
         // return $data;
     }
 

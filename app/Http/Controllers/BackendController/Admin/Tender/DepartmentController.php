@@ -41,7 +41,7 @@ class DepartmentController extends Controller
     public function store(Request $request)
     {
         $department = Department::create(['name'=>$request->department]);
-        return redirect('department')->with('success', 'Department has been created !');
+        return redirect()->back()->with('success', 'Department has been created !');
     }
 
     /**

@@ -31,6 +31,26 @@
             </a>
           </li>
           <!-- End Dashbord  -->
+          {{-- Tender application Start --}}
+          <li class="nav-item has-treeview">
+            <a href="{{route('admin.application')}}" class="nav-link">
+                <i class="fas fa-file-import"></i>
+              <p>
+                Tender Applicatios
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+
+           <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('admin.application')}}" class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>All Applications</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          {{-- Tender application End --}}
           <!-- tourism manage  -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -174,6 +194,25 @@
             </ul>
           </li>
             <!--End Category management -->
+            <!-- Department management -->
+            <li class="nav-item has-treeview">
+            <a href="{{url('admin/department')}}" class="nav-link">
+            <i class="fa fa-file" aria-hidden="true"></i>
+              <p>
+                Department
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+           <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{url('admin/department')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Manage Department</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+            <!--End Department management -->
 
             <!-----Order ---->
             <!-- manage User -->
@@ -226,92 +265,7 @@
             </ul>
           </li>
           <!--end cliend management -->
-          <!-- innovative idea management -->
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-            <i class="material-icons" style="font-size:16px;">&#xe7fb;</i>
-              <p>
-                Innovative idea
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-           <ul class="nav nav-treeview">
-              <!-- <li class="nav-item">
-                <a href="" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Create user</p>
-                </a>
-              </li> -->
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Manage idea</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <!--end innovative idea management -->
-          <!-- Country management -->
-          <li class="nav-item has-treeview">
-          <a href="{{url('/location')}}" class="nav-link">
-            <i class="material-icons" style="font-size:16px;">&#xe7fb;</i>
-              <p>
-                Add Location
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-          </li>
-          <!--end Country management -->
-          <!-- Department management -->
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-            <i class="material-icons" style="font-size:16px;">&#xe7fb;</i>
-              <p>
-                Add Department
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-           <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Create Department</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Manage Department</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <!--end Department management -->
-          <!-- catagory management -->
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-            <i class="material-icons" style="font-size:16px;">&#xe7fb;</i>
-              <p>
-                Catagory
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-           <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Create Catagory</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Manage Catagory</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <!--end catagory management -->
+
             <!----Logout---->
                 <li class="nav-item ">
 

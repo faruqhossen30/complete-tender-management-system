@@ -9,6 +9,7 @@ use App\Models\Tender\Category;
 use App\Models\Tender\Department;
 use App\Models\Tender\Country;
 use App\Models\Tender\Location;
+use App\Models\User;
 
 class Tender extends Model
 {
@@ -30,6 +31,11 @@ class Tender extends Model
         'lastDate',
         'user_id'
     ];
+
+    public function tenderAuthor(Type $var = null)
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 
     public function tenderType()
     {

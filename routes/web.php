@@ -13,11 +13,17 @@ use App\Http\Controllers\BackendController\Admin\Tender\CategoryController; // o
 use App\Http\Controllers\BackendController\Admin\Tender\TypeController; // ok
 use App\Http\Controllers\BackendController\Admin\Tender\DepartmentController; // ok
 use App\Http\Controllers\BackendController\User\UserHomeController;
+// Client Applictions
+use App\Http\Controllers\BackendController\Admin\Tender\Application\ClientApplicationsController;
+
 // FontEndController
 use App\Http\Controllers\BackendController\Admin\ClientListController;
+use App\Http\Controllers\BackendController\User\ApplyUserController;
 use App\Http\Controllers\FrontEndController\HomePageController;
+
 // Controlles for Client dashboard
 use App\Http\Controllers\UserProfleController;
+use App\Http\Controllers\BackendController\User\AppliedTenderController;
 
 // Route for authincate Admin area
 Auth::routes();
@@ -33,6 +39,9 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
     Route::resource('type', TypeController::class);
     Route::resource('department', DepartmentController::class);
     Route::resource('client', ClientController::class);
+    // For Client Applications
+    Route::get('application', [ClientApplicationsController::class, 'index'])->name('admin.application');
+
 
 });
 
@@ -43,6 +52,10 @@ Route::middleware(['auth', 'is_client'])->prefix('user')->group(function () {
     Route::get('profile', [UserProfleController::class, 'profile'])->name('profile');
     Route::get('profile/update', [UserProfleController::class, 'create'])->name('profile.update');
     Route::post('profile/update', [UserProfleController::class, 'store'])->name('profile.store');
+
+    Route::get('/apply', [ApplyUserController::class, 'index'])->name('apply');
+    Route::post('/apply', [ApplyUserController::class, 'applyConfirm'])->name('apply.confirm');
+    Route::get('application', [AppliedTenderController::class, 'index'])->name('application');
 
 });
 

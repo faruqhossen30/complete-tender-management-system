@@ -149,7 +149,7 @@ class UserProfleController extends Controller
             'nid_img'           => $nid_final_name,
         ]);
 
-        return "ok";
+        return redirect('/')->with('profileupdate', 'Profile has been updated !');
 
 
 

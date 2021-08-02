@@ -41,7 +41,7 @@ class CountryController extends Controller
     {
        $country = Country::create(['name' => $request->country]);
 
-       return redirect()->back();
+       return redirect()->back()->with('success', 'Country has been created !');
     }
 
     /**

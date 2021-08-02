@@ -30,6 +30,27 @@
               </p>
             </a>
           </li>
+
+          {{-- Tender application start --}}
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+            <i class="material-icons" style="font-size:16px;">&#xe7fb;</i>
+                <p>
+                Tender Application
+                <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{route('application')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>All Applications</p>
+                    </a>
+                </li>
+
+            </ul>
+            </li>
+          {{-- Tender application End --}}
           <!-- End Dashbord  -->
 
           <!-- manage User -->

@@ -40,7 +40,7 @@
                                 <div class="form-group row">
                                     <label for="inputEmail3" class="col-sm-3 col-form-label">Category</label>
                                     <div class="col-sm-9">
-                                    <input type="text" name="category" class="form-control" id="inputEmail3" placeholder="Enter Location">
+                                    <input type="text" name="category" class="form-control" id="inputEmail3" placeholder="Enter Category">
                                     </div>
                                 </div>
                             </div>

@@ -46,9 +46,10 @@
             </tr>
             </thead>
             <tbody>
+                @php($serial = 1)
             @foreach($clients as $client)
             <tr>
-                <td>{{$client->id}}</td>
+                <td>{{$serial++}}</td>
                 <td>{{$client->name}}</td>
                 <td>{{$client->email}}</td>
                 <td>{{$client->phone}}</td>

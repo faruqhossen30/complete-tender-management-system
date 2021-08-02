@@ -7,6 +7,7 @@
 }
 .cwl-social ul li a{
     color: white !important;
+    line-height: 1;
 }
 
 .navbar-brand img{
@@ -48,3 +49,21 @@
     background-color: #BC1F2D;
 }
 
+/* Footer start */
+.bg-footer {
+    background-color: #BF202F;
+}
+
+.bg-social-icon {
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    background-color: #444444;
+    text-align: center;
+    padding: 2px;
+}
+
+.bg-social-icon:hover {
+    background-color: blue;
+}
+/* Footer End */

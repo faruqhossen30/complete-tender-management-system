@@ -51,7 +51,7 @@
                             <td>{{$tender->id}}</td>
                             <td>{{$tender->tenderID}}</td>
                             <td>{{substr($tender->description,0,45)}} ...</td>
-                            <td>{{$tender->user_id}}</td>
+                            <td>{{$tender->tenderAuthor->name}}</td>
                             <td>{{$tender->created_at}}</td>
                             <td>{{$tender->lastDate}}</td>
                             <td>

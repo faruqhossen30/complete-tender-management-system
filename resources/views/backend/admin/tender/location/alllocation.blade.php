@@ -24,7 +24,7 @@
         <!-- /.card-header -->
         <div class="card-body table-responsive p-0">
                 @if (session('success'))
-                <div class="alert alert-warning alert-dismissible fade show m-3" role="alert">
+                <div class="alert alert-success alert-dismissible fade show m-3" role="alert">
                 <strong>{{session('success')}}</strong>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                           <span aria-hidden="true">&times;</span>

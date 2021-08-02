@@ -100,7 +100,7 @@
                     </div>
                     <div class="col form-group">
                         <label for="txtdate">Last Date ( Deadline )</label>
-                        <input type="datetime-local" class="form-control" name="lastDate" id="txtdate" placeholder="10:04:2020 , 12:00 am">
+                        <input type="datetime-local" class="form-control" name="lastDate" id="txtdate" placeholder="10:04:2020 , 12:00 am" required>
                     </div>
                 </div>
 

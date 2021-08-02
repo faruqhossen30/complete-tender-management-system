@@ -42,7 +42,7 @@ class TypeController extends Controller
     {
         $typeData = Type::create(['name'=>$request->type]);
 
-        return redirect('type')->with('success', 'Tender Type has been Created !');
+        return redirect()->back()->with('success', 'Tender Type has been Created !');
     }
 
     /**

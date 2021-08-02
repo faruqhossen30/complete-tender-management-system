@@ -53,7 +53,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       Anything you want
     </div>
     <!-- Default to the left -->
-    <p><strong>Catalysts Wings</strong> <i class="fa fa-copyright"></i> 2021 Developed by <a href="https://stkitbd.com/"><strong>Stk IT Solution Ltd.</strong></a></p>
+    <p><strong><a href="https://www.catalystswings.com/"><strong>Catlysts Wings Ltd</strong></a></p>
     <!-- <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved. -->
   </footer>
 </div>
