@@ -55,7 +55,12 @@
                 <td>{{$client->phone}}</td>
                 <td>sdfk</td>
                 <td>
-                    <a href="{{url('admin/client/'.$client->id.'/edit')}}" class="btn btn-success btn-sm">Active</a>
+                    @if ('1'==$client->active)
+                        <a href="{{route('change-status',$client->id)}}" class="btn btn-success btn-sm" title="Click for deactivate">Active</a>
+                    @else
+                        <a href="{{route('change-status',$client->id)}}" class="btn btn-warning btn-sm" title="Click for activate">Deactive</a>
+                        
+                    @endif
                     <a href="{{url('admin/client/'.$client->id)}}" class="btn btn-primary btn-sm">View</a>
 
 

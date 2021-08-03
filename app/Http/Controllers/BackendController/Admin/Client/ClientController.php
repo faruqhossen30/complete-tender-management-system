@@ -4,6 +4,7 @@ namespace App\Http\Controllers\BackendController\Admin\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -88,5 +89,21 @@ class ClientController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function changeStatus($id)
+    {
+        try {
+            $client = User::find($id);
+            $status = $client->active;
+            if (!$status) {
+                $client->active = 1;
+            } else {
+                $client->active = 0;
+            }
+            $client->save();
+            return redirect()->back()->with(['success' => 'Status Changed successfully']);
+        } catch (Exception $e) {
+            return 'An error ocurd';
+        }
     }
 }
