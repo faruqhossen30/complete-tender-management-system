@@ -21,7 +21,7 @@
             <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email" required>
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fas fa-user"></span>
+                <span class="fas fa-envelope"></span>
               </div>
             </div>
           </div>
@@ -37,7 +37,7 @@
             <input id="address" type="text" class="form-control " name="address" value="{{ old('address') }}" placeholder="Address" required>
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fas fa-phone"></span>
+                <span class="fas fa-home"></span>
               </div>
             </div>
           </div>
@@ -49,11 +49,7 @@
                 <option value="Canada">Canada </option>
                 <option value="Denmark">Denmark </option>
             </select>            
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-phone"></span>
-              </div>
-            </div>
+            
           </div>
           <div class="input-group mb-3">
             <select name="vendor" id="vendorID" class="custom-select" value="{{ old('vendor') }}" required>
@@ -63,11 +59,7 @@
                 <option value="manufacturer">Manufacturer </option>
                 <option value="supplier">Supplier </option>
             </select>           
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-phone"></span>
-              </div>
-            </div>
+            
           </div>
           <div class="input-group mb-3">
             <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>

@@ -26,7 +26,7 @@ CWL || Log in
                     <input id="email" type="email" class="form-control" placeholder="Email"name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                     <div class="input-group-append">
                         <div class="input-group-text">
-                            <span ><i class="faS fa-envelope"></i></span>
+                            <span ><i class="fas fa-envelope"></i></span>
                         </div>
                     </div>
                     @error('email')
