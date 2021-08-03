@@ -69,11 +69,14 @@
                                     <div class="modal-footer d-flex justify-content-between align-items-center">
                                         <ul class="list-inline ">
                                             <li class="list-inline-item">
-                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-map-marker"></i></span> {{$tender->tenderCountry->name}} | </a>
+                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-map-marker"></i></span> {{ $tender->tenderCountry->name ?? "N/A"}} </a>
                                             </li>
+                                            @if (isset($tender->tenderLocation->name))
                                             <li class="list-inline-item">
-                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> {{$tender->tenderLocation->name}} </a>
+                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> |
+                                                    {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                             </li>
+                                            @endif
                                         </ul>
 
                                         <div class="list-inline">
@@ -149,11 +152,14 @@
                                     <div class="modal-footer d-flex justify-content-between align-items-center">
                                         <ul class="list-inline ">
                                             <li class="list-inline-item">
-                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-map-marker"></i></span> {{$tender->tenderCountry->name}} | </a>
+                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-map-marker"></i></span> {{ $tender->tenderCountry->name ?? "N/A"}} </a>
                                             </li>
+                                            @if (isset($tender->tenderLocation->name))
                                             <li class="list-inline-item">
-                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> {{$tender->tenderLocation->name}} </a>
+                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> |
+                                                    {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                             </li>
+                                            @endif
                                         </ul>
                                         <input type="hidden" name="tender_id" value="{{$tender->id}}">
                                         <div class="list-inline">
@@ -193,12 +199,15 @@
                                 <div class="card-footer d-flex justify-content-between align-items-center">
                                     <ul class="list-inline ">
                                         <li class="list-inline-item">
-                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-map-marker"></i></span> {{$tender->tenderCountry->name}} | </a>
+                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-map-marker"></i></span> {{ $tender->tenderCountry->name ?? "N/A"}} </a>
                                         </li>
+                                        @if (isset($tender->tenderLocation->name))
                                         <li class="list-inline-item">
-                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> {{$tender->tenderLocation->name}} </a>
+                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> |
+                                                {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                         </li>
-                                      </ul>
+                                        @endif
+                                    </ul>
                                       <div class="list-inline">
                                         @auth
                                             @php

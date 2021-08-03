@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-12">
                 <article class="p-4">
-                    <img src="{{asset('img/cwl.png')}}" alt="Logo" class="img-fluid">
+                    <img src="{{asset('public/img/cwl.png')}}" alt="Logo" class="img-fluid">
                     <p class="text-justify">Catalysts Wings Limited was established in 2020. Our main objective is to build a good
                         relationship between domestic and foreign contractors for the</p>
                 </article>
