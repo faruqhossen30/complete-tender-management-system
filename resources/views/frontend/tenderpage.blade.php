@@ -1,12 +1,52 @@
 @extends('frontend.layouts.app')
 @section('title', 'Welcome Page')
 @section('body')
-@include('frontend.layouts.slider')
-<div class="container-fluid">
-    <div class="container mt-3">
-        <div class="row">
+{{-- Search section start  --}}
+<div class="container-fluid bg-light m-0">
+    <div class="container pt-5 pb-5">
+        <form action="" class="d-flex justify-content-center pb-3 pt-3">
+            <ul class="nav">
+                <li>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></div>
+                        </div>
+                        <input type="text" class="form-control mr-2" id="inlineFormInputGroup" placeholder="Search Tender">
+                    </div>
+                </li>
+                <li>
+                    <button type="submit" class="btn btn-secondary">Search <i class="fa fa-search"></i></button>
+                </li>
+            </ul>
+        </form>
+        <div class="d-flex justify-content-center pb-5">
+            <select class="custom-select">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            <select class="custom-select">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            <select class="custom-select">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+        </div>
+    </div>
+</div>
+{{-- Search section End  --}}
+<div class="container pt-3">
+    <div class="row">
+            {{-- Tender Section Start --}}
             <div class="col-md-8 col-sm-12">
-                <div class="row mt-3">
+                {{-- <div class="row mt-3">
                     <div class="latest-heading ml-3">
                         <h2>Recommended Tenders</h2>
                         <p class="text-secondary">Select Your Tender, Apply Now.</p>
@@ -22,10 +62,8 @@
                             <a class="nav-link btn-sm" href="#international" data-toggle="tab"> International </a>
                         </li>
                     </ul>
-                </div>
-                <div class="tab-content">
-                    {{-- Tab Content Start --}}
-                    <div class="tab-pane active" id="all">
+                </div> --}}
+                    <div class="">
 
                         @foreach ($tenders as $tender)
                         @php
@@ -232,17 +270,12 @@
                                 </div>
                             </div>
                         @endforeach
-
-
-
                     </div>
                     {{-- Tab Content End --}}
-                    <div class="tab-pane" id="international">
-                        <p>International ipsum dolor sit, amet consectetur adipisicing elit. Mollitia consectetur, in tempore voluptatibus aliquid inventore debitis. Amet aut quas optio.</p>
-                    </div>
-
-                </div>
             </div>
+            {{-- Tender Section End --}}
+
+            {{-- Sidebar section Start --}}
             <div class="col-md-4 d-sm-none d-md-block">
                 <ul class="list-group mb-3">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -344,13 +377,10 @@
 
                 </ul>
             </div>
-
-
-
+            {{-- Sidebar section End --}}
 
         </div>
     </div>
-</div>
 
 
 @endsection

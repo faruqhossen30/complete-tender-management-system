@@ -1,4 +1,4 @@
-<div class="container-fluid bg-light mt-2">
+<div class="container-fluid bg-light border-top">
     <div class="container">
 
         <div class="row">

@@ -20,6 +20,7 @@ use App\Http\Controllers\BackendController\Admin\Tender\Application\ClientApplic
 use App\Http\Controllers\BackendController\Admin\ClientListController;
 use App\Http\Controllers\BackendController\User\ApplyUserController;
 use App\Http\Controllers\FrontEndController\HomePageController;
+use App\Http\Controllers\FrontEndController\TenderPageController;
 
 // Controlles for Client dashboard
 use App\Http\Controllers\UserProfleController;
@@ -63,3 +64,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Font-End Route
 
 Route::get('/', [HomePageController::class, 'homepage'])->name('homepage');
+
+Route::get('/tenders', [TenderPageController::class, 'index'])->name('tenders');
+

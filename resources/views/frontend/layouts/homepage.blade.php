@@ -48,8 +48,8 @@
                                         <div class="d-flex justify-content-between align-items-center">
                                             <ul class="list-inline" style="font-size: 13px;">
                                                 <li class="list-inline-item">Tender ID: {{$tender->tenderID}} </li>
-                                                {{-- <li class="list-inline-item">Start:{{$tender->created_at}}</li> --}}
-                                                <li class="list-inline-item">Deadline :{{$tender->lastDate}}</li>
+                                                <li class="list-inline-item">Start:{{$tender->created_at}}</li>
+                                                <li class="list-inline-item">Last Date:{{$tender->lastDate}}</li>
                                                 <li class="list-inline-item" style="font-size: 16px;"> &nbsp; &nbsp; &nbsp;
                                                         3 Days 6 Hours
                                                 </li>
@@ -62,8 +62,8 @@
                                             <p> <strong>Description: </strong>{{$tender->description}}</p>
                                         </div>
                                         <div class="list-inline">
-                                            <span><strong>Security:</strong> {{$tender->tenderSecurity}} | </span>
-                                            <span><strong>Budget:</strong> {{$tender->tenderBudget}}</span>
+                                            <span><strong>Security:</strong> 40000 Tk | </span>
+                                            <span><strong>Budget:</strong> 40000 Tk</span>
                                         </div>
                                     </div>
                                     <div class="modal-footer d-flex justify-content-between align-items-center">
@@ -123,8 +123,8 @@
                                         <div class="d-flex justify-content-between align-items-center">
                                             <ul class="list-inline" style="font-size: 13px;">
                                                 <li class="list-inline-item">Tender ID: {{$tender->tenderID}} </li>
-                                                {{-- <li class="list-inline-item">Start:{{$tender->created_at }}</li> --}}
-                                                <li class="list-inline-item">Deadline :{{$tender->lastDate}}</li>
+                                                <li class="list-inline-item">Start:{{$tender->created_at }}</li>
+                                                <li class="list-inline-item">Last Date:{{$tender->lastDate}}</li>
                                                 <li class="list-inline-item" style="font-size: 16px;"> &nbsp; &nbsp; &nbsp;
                                                     3 Days 6 Hours
                                                 </li>
@@ -164,22 +164,25 @@
                                         <input type="hidden" name="tender_id" value="{{$tender->id}}">
                                         <div class="list-inline">
                                             <a href="#" class="btn btn-secondary btn-sm" data-toggle="modal" data-dismiss="modal">Close</a>
+
+
                                             <button type="submit" class="btn btn-secondary btn-sm">Apply</button>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             </div>
                         </div>
-                        </form>
+                    </form>
                         {{-- End  Modal Apply Tender --}}
 
                         <div class="card mb-3">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <ul class="list-inline" style="font-size: 13px;">
-                                            <li class="list-inline-item">Tender ID : {{$tender->tenderID}} </li>
-                                            {{-- <li class="list-inline-item">Start : {{ \Carbon\Carbon::parse( $tender->created_at )->format('d-M-y') }}</li> --}}
+                                            <li class="list-inline-item">Tender ID : {{$tender->id}} </li>
+                                            <li class="list-inline-item">Start : {{ \Carbon\Carbon::parse( $tender->created_at )->format('d-M-y') }}</li>
                                             <li class="list-inline-item">Deadline : {{ \Carbon\Carbon::parse( $tender->lastDate )->format('d-M-y') }}</li>
                                             <li class="list-inline-item" style="font-size: 16px;"> &nbsp; &nbsp; &nbsp;
                                                     3 Days 6 Hours
@@ -191,10 +194,6 @@
                                     </div>
                                     <div>
                                         <p> <strong>Description: </strong>{{$tender->description}}</p>
-                                    </div>
-                                    <div class="list-inline">
-                                        <span><strong>Security:</strong> {{$tender->tenderSecurity}} | </span>
-                                        <span><strong>Budget:</strong> {{$tender->tenderBudget}}</span>
                                     </div>
                                 </div>
                                 <div class="card-footer d-flex justify-content-between align-items-center">
