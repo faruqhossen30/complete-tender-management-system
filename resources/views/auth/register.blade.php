@@ -43,7 +43,7 @@
           </div>
           <div class="input-group mb-3">
             <select name="user_country" id="userCountryID" class="custom-select" value="{{ old('user_country') }}" required >
-                <option value="" selected>Select One</option>
+                <option value="" selected>Select Country</option>
                 <option value="Afganistan">Afganistal</option>
                 <option value="Bangladesh">Bangladesh</option>
                 <option value="Canada">Canada </option>
@@ -53,7 +53,7 @@
           </div>
           <div class="input-group mb-3">
             <select name="vendor" id="vendorID" class="custom-select" value="{{ old('vendor') }}" required>
-                <option value="" selected>Select One </option>
+                <option value="" selected>Select Customer Type </option>
                 <option value="local vendor">Local Vendor </option>
                 <option value="foreign vendor">Foreign Vendor </option>
                 <option value="manufacturer">Manufacturer </option>

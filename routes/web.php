@@ -25,6 +25,7 @@ use App\Http\Controllers\FrontEndController\TenderPageController;
 // Controlles for Client dashboard
 use App\Http\Controllers\UserProfleController;
 use App\Http\Controllers\BackendController\User\AppliedTenderController;
+use Illuminate\Support\Facades\Auth;
 
 // Route for authincate Admin area
 Auth::routes();
@@ -40,10 +41,9 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
     Route::resource('type', TypeController::class);
     Route::resource('department', DepartmentController::class);
     Route::resource('client', ClientController::class);
+    Route::get('client/status/{id}', [ClientController::class, 'changeStatus'])->name('change-status');
     // For Client Applications
     Route::get('application', [ClientApplicationsController::class, 'index'])->name('admin.application');
-
-
 });
 
 
@@ -57,7 +57,6 @@ Route::middleware(['auth', 'is_client'])->prefix('user')->group(function () {
     Route::get('/apply', [ApplyUserController::class, 'index'])->name('apply');
     Route::post('/apply', [ApplyUserController::class, 'applyConfirm'])->name('apply.confirm');
     Route::get('application', [AppliedTenderController::class, 'index'])->name('application');
-
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
