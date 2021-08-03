@@ -12,9 +12,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>catalystswings</title>
 
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('css/adminlte.min.css')}}">
+  <link rel="stylesheet" href="{{asset('public/css/adminlte.min.css')}}">
   @stack('css')
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
@@ -62,11 +62,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-<script src="{{asset('js/jquery.min.js')}}"></script>
+<script src="{{asset('public/js/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('public/js/bootstrap.bundle.min.js')}}"></script>
 @stack('js')
 <!-- AdminLTE App -->
-<script src="{{asset('js/adminlte.min.js')}}"></script>
+<script src="{{asset('public/js/adminlte.min.js')}}"></script>
 </body>
 </html>
