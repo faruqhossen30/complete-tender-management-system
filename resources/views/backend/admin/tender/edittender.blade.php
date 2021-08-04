@@ -73,7 +73,7 @@
                     <div class="col-4 form-group">
                         <label for="countryID">Country</label>
                         <select name="country" class="form-control" id="countryID" style="width:100%;height:38px;">
-                            <option value="{{$tender->country_id}}">{{$tender->tenderCountry->name}}</option>
+                            <option value="{{$tender->country_id ?? "N/A"}}">{{$tender->tenderCountry->name ?? "N/A"}}</option>
                             @foreach ($countries as $country)
                                 <option value="{{$country->id}}">{{$country->name}}</option>
                             @endforeach
@@ -83,7 +83,7 @@
                     <div class="col-4 form-group">
                         <label for="locationID">Location</label>
                         <select name="location" class="form-control" id="countryID" style="width:100%;height:38px;">
-                            <option value="{{$tender->location_id}}">{{$tender->tenderLocation->name}}</option>
+                            <option value="{{$tender->location_id ?? "N/A"}}">{{$tender->tenderLocation->name ?? "N/A"}}</option>
                             @foreach ($locations as $location)
                                 <option value="{{$location->id}}">{{$location->name}}</option>
                             @endforeach

@@ -22,8 +22,28 @@
                         <a class="nav-link" href="#"><span><i class="fa fa-youtube" aria-hidden="true"></i></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">English</a>
+                        <a class="nav-link" href="#">ENGLISH |</a>
                     </li>
+                    @guest
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('register')}}">REGISTER</a>
+                      </li>
+                      <li class="nav-item ">
+                        <a class="nav-link" href="{{url('login')}}">| LOGIN</a>
+                      </li>
+                    @endguest
+                    @auth
+                        @if (auth()->user()->is_admin == 1)
+                            <li class="nav-item ">
+                                <a class="nav-link" href="{{url('/admin')}}">Admin</a>
+                            </li>
+                        @elseif (auth()->user()->is_admin == 0)
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{url('/user')}}">My Account</a>
+                        </li>
+
+                        @endif
+                    @endauth
                 </ul>
             </div>
         </div>

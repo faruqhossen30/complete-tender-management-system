@@ -31,8 +31,6 @@
                         @php
                             $is_apply = DB::table('applies')->where('tender_id', $tender->id)->first();
                         @endphp
-                        {{-- <p>{{$is_apply->tender_id}}</p> --}}
-
                         <!-- Start Modal View Tender -->
                         <div class="modal fade" id="viewTender{{$tender->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
@@ -59,8 +57,12 @@
                                             </div>
                                         </div>
                                         <div>
+                                            <p> <strong>Catagory : </strong>{{$tender->tenderCategory->name}}</p>
+                                        </div>
+                                        <div>
                                             <p> <strong>Description: </strong>{{$tender->description}}</p>
                                         </div>
+
                                         <div class="list-inline">
                                             <span><strong>Security:</strong> {{$tender->tenderSecurity}} | </span>
                                             <span><strong>Budget:</strong> {{$tender->tenderBudget}}</span>
@@ -134,6 +136,9 @@
                                             </div>
                                         </div>
                                         <div>
+                                            <p> <strong>Catagory : </strong>{{$tender->tenderCategory->name}}</p>
+                                        </div>
+                                        <div>
                                             <p> <strong>Description: </strong>{{$tender->description}}</p>
                                         </div>
                                         <div class="list-inline">
@@ -180,10 +185,11 @@
                                         <ul class="list-inline" style="font-size: 13px;">
                                             <li class="list-inline-item">Tender ID : {{$tender->tenderID}} </li>
                                             {{-- <li class="list-inline-item">Start : {{ \Carbon\Carbon::parse( $tender->created_at )->format('d-M-y') }}</li> --}}
-                                            <li class="list-inline-item">Deadline : {{ \Carbon\Carbon::parse( $tender->lastDate )->format('d-M-y') }}</li>
-                                            <li class="list-inline-item" style="font-size: 16px;"> &nbsp; &nbsp; &nbsp;
+                                            {{-- <li class="list-inline-item">Deadline : {{ \Carbon\Carbon::parse( $tender->lastDate )->format('d-M-y') }}</li> --}}
+                                            <li class="list-inline-item">Deadline : {{$tender->lastDate}}</li>
+                                            {{-- <li class="list-inline-item" style="font-size: 16px;"> &nbsp; &nbsp; &nbsp;
                                                     3 Days 6 Hours
-                                            </li>
+                                            </li> --}}
                                         </ul>
                                         <div class="">
                                             <span class=""><i class="fa fa-heart"></i></span>
@@ -236,13 +242,22 @@
 
 
                     </div>
-                    {{-- Tab Content End --}}
+                    {{-- Tab Content All End --}}
+                    {{-- Tab Content National Start --}}
+                    <div class="tab-pane" id="national">
+
+                    </div>
+                    {{-- Tab Content National End --}}
+
+                    {{-- Tab Content InterNational Start --}}
                     <div class="tab-pane" id="international">
                         <p>International ipsum dolor sit, amet consectetur adipisicing elit. Mollitia consectetur, in tempore voluptatibus aliquid inventore debitis. Amet aut quas optio.</p>
                     </div>
-
+                    {{-- Tab Content InterNational End --}}
                 </div>
             </div>
+            {{-- Sidebar section Sart --}}
+
             <div class="col-md-4 d-sm-none d-md-block">
                 <ul class="list-group mb-3">
                     <li class="list-group-item d-flex justify-content-between align-items-center">
@@ -344,10 +359,7 @@
 
                 </ul>
             </div>
-
-
-
-
+            {{-- Sidebar section End --}}
         </div>
     </div>
 </div>
