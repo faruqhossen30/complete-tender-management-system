@@ -64,5 +64,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/', [HomePageController::class, 'homepage'])->name('homepage');
 
-Route::get('/tenders', [TenderPageController::class, 'index'])->name('tenders');
+Route::get('/tender/all', [TenderPageController::class, 'allTender'])->name('tender.all');
+Route::get('/tender/national', [TenderPageController::class, 'national'])->name('tender.national');
+Route::get('/tender/international', [TenderPageController::class, 'international'])->name('tender.international');
 

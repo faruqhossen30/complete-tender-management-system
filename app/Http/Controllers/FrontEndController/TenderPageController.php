@@ -8,17 +8,24 @@ use App\Models\Tender\Tender;
 
 class TenderPageController extends Controller
 {
-    public function index()
+    public function allTender()
     {
-        $tenders = Tender::latest()->take(10)->get();
+        $tenders = Tender::paginate(5);
 
-        return view('frontend.tenderpage', compact('tenders') );
+        return view('frontend.allltender', compact('tenders') );
     }
 
     public function national()
     {
-        $tenders = Tender::where('country_id', 4)->latest()->get();
+        $tenders = Tender::where('country_id', 4)->paginate(5);
 
-        return view('frontend.tenderpage', compact('tenders') );
+        return view('frontend.nationaltender', compact('tenders') );
+    }
+
+    public function international()
+    {
+        $tenders = Tender::where('country_id', '!=', 4)->paginate(5);
+
+        return view('frontend.international', compact('tenders') );
     }
 }
