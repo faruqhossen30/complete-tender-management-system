@@ -251,7 +251,7 @@
                     </div>
                     @endforeach
 
-                    {{$tenders->links("pagination::bootstrap-4")}}
+                    {{$tenders->links()}}
 
 
                 {{-- Tab Content End --}}
