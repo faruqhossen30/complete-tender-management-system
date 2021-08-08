@@ -18,14 +18,17 @@
                     <li class="nav-item">
                       <a class="nav-link {{ request()->routeIs('tender.all') ? 'cwl-active' : '' }}" href="{{route('tender.all')}}">All Tender</a>
                     </li>
-                    {{-- <li class="nav-item">
-                      <a class="nav-link" href="#">Private Tender</a>
-                    </li> --}}
                     <li class="nav-item">
                       <a class="nav-link {{ request()->routeIs('tender.national') ? 'cwl-active' : '' }}" href="{{route('tender.national')}}">National Tender</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link {{ request()->routeIs('tender.international') ? 'cwl-active' : '' }}" href="{{route('tender.international')}}">Internation Tender</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link {{ request()->routeIs('about') ? 'cwl-active' : '' }}" href="{{route('about')}}">About US</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link {{ request()->routeIs('contact') ? 'cwl-active' : '' }}" href="{{route('contact')}}">Contact Us</a>
                     </li>
 
                   </ul>

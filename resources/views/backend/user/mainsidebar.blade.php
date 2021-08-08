@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{url('home')}}" class="brand-link">
-      <img src="{{asset('public/images/logo2.png')}}" alt="Logo" class="brand-image img-circle elevation-3"
+    <a href="{{route('homepage')}}" class="brand-link">
+      <img src="{{asset('public/img/2.png')}}" style="height: 50px; background: white;" alt="Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light"><b>CatalystsWings</b></span>
     </a>

@@ -64,6 +64,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Font-End Route
 
 Route::get('/', [HomePageController::class, 'homepage'])->name('homepage');
+Route::get('/about', [HomePageController::class, 'about'])->name('about');
+Route::get('/contact', [HomePageController::class, 'contact'])->name('contact');
 
 Route::get('/tender/all', [TenderPageController::class, 'allTender'])->name('tender.all');
 Route::get('/tender/national', [TenderPageController::class, 'national'])->name('tender.national');

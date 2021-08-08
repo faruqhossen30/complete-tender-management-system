@@ -20,5 +20,13 @@ class HomePageController extends Controller
         return view('frontend.homepage', compact('tenders', 'nationaltender', 'international'));
     }
 
+    public function about()
+    {
+        return view('frontend.about');
+    }
+    public function contact()
+    {
+        return view('frontend.contact');
+    }
 
 }
