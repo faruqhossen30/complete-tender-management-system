@@ -13,19 +13,19 @@
                 <div class="collapse navbar-collapse cwl-menu " id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto text-white nav-pills">
                     <li class="nav-item ">
-                      <a class="nav-link cwl-active" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
+                      <a class="nav-link {{ request()->routeIs('homepage') ? 'cwl-active' : '' }}" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="{{route('tender.all')}}">All Tender</a>
+                      <a class="nav-link {{ request()->routeIs('tender.all') ? 'cwl-active' : '' }}" href="{{route('tender.all')}}">All Tender</a>
                     </li>
                     {{-- <li class="nav-item">
                       <a class="nav-link" href="#">Private Tender</a>
                     </li> --}}
                     <li class="nav-item">
-                      <a class="nav-link" href="{{route('tender.national')}}">National Tender</a>
+                      <a class="nav-link {{ request()->routeIs('tender.national') ? 'cwl-active' : '' }}" href="{{route('tender.national')}}">National Tender</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="{{route('tender.international')}}">Internation Tender</a>
+                      <a class="nav-link {{ request()->routeIs('tender.international') ? 'cwl-active' : '' }}" href="{{route('tender.international')}}">Internation Tender</a>
                     </li>
 
                   </ul>

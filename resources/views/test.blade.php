@@ -13,33 +13,9 @@
   <body>
       <div class="container">
             <h1>Hello, world!</h1>
-        {{-- <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-                @foreach ($tenders as $tender)
-                    <tr>
-                        <th scope="row">{{$tender->id}}</th>
-                        <td>{{$tender->category->name}}</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                @endforeach
 
-
-            </tbody>
-          </table> --}}
-
-        <p>{{$tenders->location}}</p>
-        <p>{{$tenders->location}}</p>
-        {{$tenders->category->name}}
-
+        <a href="" class="btn btn-primary {{ (strpos(Route::currentRouteName(), 'test') == 0) ? 'cwl-active' : '' }}">Home</a>
+        <a href="" class="btn btn-primary active">Contact</a>
 
 
 
