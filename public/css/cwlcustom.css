@@ -1,6 +1,15 @@
-/* For Top bar */
+/* For Top bar Start*/
 .cwl-bg{
     background-color: #BC1F2D;
+}
+.cwl-text-color{
+    color: #BC1F2D;
+}
+
+.list-group-item i{
+    color: #BC1F2D !important;
+    font-size: 18px;
+    margin-right: 3px;
 }
 .cwl-info p{
     color: white;
@@ -13,6 +22,10 @@
     font-size: 13px;
 }
 
+
+
+/* For Top bar End*/
+
 .navbar-brand img{
     height: 50px;
     background: white;
@@ -22,6 +35,9 @@
     color: white !important;
     text-transform: uppercase;
 }
+
+
+
 /* For Slider */
 .cwl-slider img{
     display: block;
