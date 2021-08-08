@@ -99,34 +99,53 @@
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
             <a href="#" class="text-dark">
-                <span><i class="fa fa-globe" aria-hidden="true"></i></span> Dapibus ac facilisis in
+                <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span> January 2021
             </a>
-            <span class="badge badge-primary badge-pill">2</span>
+            <span class="badge badge-primary badge-pill cwl-active">2</span>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
             <a href="#" class="text-dark">
-                <span><i class="fa fa-globe" aria-hidden="true"></i></span> Dapibus ac facilisis in
+                <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span> February 2021
             </a>
-            <span class="badge badge-primary badge-pill">2</span>
+            <span class="badge badge-primary badge-pill cwl-active">2</span>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
             <a href="#" class="text-dark">
-                <span><i class="fa fa-globe" aria-hidden="true"></i></span> Dapibus ac facilisis in
+                <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span> March 2021
             </a>
-            <span class="badge badge-primary badge-pill">2</span>
+            <span class="badge badge-primary badge-pill cwl-active">2</span>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
             <a href="#" class="text-dark">
-                <span><i class="fa fa-globe" aria-hidden="true"></i></span> Dapibus ac facilisis in
+                <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span> April 2021
             </a>
-            <span class="badge badge-primary badge-pill">2</span>
+            <span class="badge badge-primary badge-pill cwl-active">2</span>
         </li>
         <li class="list-group-item d-flex justify-content-between align-items-center">
             <a href="#" class="text-dark">
-                <span><i class="fa fa-globe" aria-hidden="true"></i></span> Dapibus ac facilisis in
+                <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span> May 2021
             </a>
-            <span class="badge badge-primary badge-pill">2</span>
+            <span class="badge badge-primary badge-pill cwl-active">2</span>
         </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="#" class="text-dark">
+                <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span> June 2021
+            </a>
+            <span class="badge badge-primary badge-pill cwl-active">2</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="#" class="text-dark">
+                <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span> July 2021
+            </a>
+            <span class="badge badge-primary badge-pill cwl-active">2</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="#" class="text-dark">
+                <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span> August 2021
+            </a>
+            <span class="badge badge-primary badge-pill cwl-active">2</span>
+        </li>
+
 
 
     </ul>

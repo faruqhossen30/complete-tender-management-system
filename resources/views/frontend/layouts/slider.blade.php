@@ -11,7 +11,7 @@
                     <div class="carousel-caption d-none d-md-block">
                         <h1 class="text-left">Find Your Tender Now !</h1>
                         <p class="text-left">Our main objective is to build a good relationship between domestic <br> and foreign contractors for the development of the country and the nation.</p>
-                        <a href="{{url('/tenders')}}" class="float-left btn btn-primary btn-lg cwl-btn">All Tender</a>
+                        <a href="{{route('tender.all')}}" class="float-left btn btn-primary btn-lg cwl-btn">All Tender</a>
                     </div>
                   </div>
                   <div class="carousel-item">
