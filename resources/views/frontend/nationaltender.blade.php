@@ -37,6 +37,9 @@
                                         </div>
                                     </div>
                                     <div>
+                                        <p> <strong>Catagory : </strong>{{$tender->tenderCategory->name}}</p>
+                                    </div>
+                                    <div>
                                         <p> <strong>Description: </strong>{{$tender->description}}</p>
                                     </div>
                                     <div class="list-inline">
@@ -111,11 +114,14 @@
                                         </div>
                                     </div>
                                     <div>
+                                        <p> <strong>Catagory : </strong>{{$tender->tenderCategory->name}}</p>
+                                    </div>
+                                    <div>
                                         <p> <strong>Description: </strong>{{$tender->description}}</p>
                                     </div>
                                     <div class="list-inline">
-                                        <span><strong>Security:</strong> 40000 Tk | </span>
-                                        <span><strong>Budget:</strong> 40000 Tk</span>
+                                        <span><strong>Security:</strong> {{$tender->tenderSecurity}} | </span>
+                                        <span><strong>Budget:</strong> {{$tender->tenderBudget}}</span>
                                     </div>
                                     <hr>
                                     <div class="form-group form-check">

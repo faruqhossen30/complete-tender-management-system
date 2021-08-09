@@ -25,6 +25,7 @@ use App\Http\Controllers\FrontEndController\TenderPageController;
 // Controlles for Client dashboard
 use App\Http\Controllers\UserProfleController;
 use App\Http\Controllers\BackendController\User\AppliedTenderController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Auth;
 
@@ -66,6 +67,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/', [HomePageController::class, 'homepage'])->name('homepage');
 Route::get('/about', [HomePageController::class, 'about'])->name('about');
 Route::get('/contact', [HomePageController::class, 'contact'])->name('contact');
+Route::get('/search', [SearchController::class, 'index'])->name('search');
 
 Route::get('/tender/all', [TenderPageController::class, 'allTender'])->name('tender.all');
 Route::get('/tender/national', [TenderPageController::class, 'national'])->name('tender.national');
