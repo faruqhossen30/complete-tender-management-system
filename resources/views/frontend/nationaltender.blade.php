@@ -1,7 +1,9 @@
 @extends('frontend.layouts.app')
 @section('title', 'Welcome Page')
 @section('body')
-
+{{-- Search section start  --}}
+@include('frontend.layouts.search')
+{{-- Search section End  --}}
 <div class="container pt-3">
     <div class="row">
         {{-- Tender Section Start --}}

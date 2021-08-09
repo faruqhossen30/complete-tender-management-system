@@ -15,8 +15,8 @@ class SearchController extends Controller
         ]);
 
         $tenders = Tender::where('description', 'like', '%'.$serach_text.'%')
-                            ->paginate(3);
+                            ->paginate(5);
 
-        return view('frontend.searchpage', compact('tenders'));
+        return view('frontend.searchpage', compact('tenders', 'serach_text'));
     }
 }
