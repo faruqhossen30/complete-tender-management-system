@@ -75,7 +75,7 @@
                                             </li>
                                             @if (isset($tender->tenderLocation->name))
                                             <li class="list-inline-item">
-                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> |
+                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> 
                                                     {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                             </li>
                                             @endif
@@ -84,8 +84,8 @@
                                         <div class="list-inline">
                                             @auth
                                                 @php
-                                                $user_is_applyed = DB::table('applies')->where('user_id', auth()->user()->id)->first();
-                                                $tender_is_apply = DB::table('applies')->where('tender_id', $tender->id)->where('user_id', auth()->user()->id)->first();
+                                                    $user_is_applyed = DB::table('applies')->where('user_id', auth()->user()->id)->first();
+                                                    $tender_is_apply = DB::table('applies')->where('tender_id', $tender->id)->where('user_id', auth()->user()->id)->first();
                                                 @endphp
                                                 <button class="btn btn-secondary btn-sm" data-toggle="modal" data-dismiss="modal">Close</button>
                                                 @if ($tender_is_apply)
@@ -96,7 +96,7 @@
                                             @endauth
 
                                             @guest
-                                            <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#viewTender{{$tender->id}}">View</button>
+                                            <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#viewTender{{$tender->id}}">Close</button>
                                             <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#applyTender{{$tender->id}}" data-dismiss="modal" >Apply</button>
                                             @endguest
 
@@ -161,7 +161,7 @@
                                             </li>
                                             @if (isset($tender->tenderLocation->name))
                                             <li class="list-inline-item">
-                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> |
+                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> 
                                                     {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                             </li>
                                             @endif
@@ -210,8 +210,8 @@
                                         </li>
                                         @if (isset($tender->tenderLocation->name))
                                         <li class="list-inline-item">
-                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> |
-                                                {{$tender->tenderLocation->name ?? "N/a"}} </a>
+                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> 
+                                                {{$tender->tenderLocation->name ?? "N/A"}} </a>
                                         </li>
                                         @endif
                                     </ul>
@@ -230,8 +230,8 @@
                                         @endauth
 
                                         @guest
-                                        <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#viewTender{{$tender->id}}">View</button>
-                                        <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#applyTender{{$tender->id}}">Apply</button>
+                                            <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#viewTender{{$tender->id}}">View</button>
+                                            <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#applyTender{{$tender->id}}">Apply</button>
                                         @endguest
 
                                       </div>
@@ -294,7 +294,7 @@
                                             </li>
                                             @if (isset($tender->tenderLocation->name))
                                             <li class="list-inline-item">
-                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> |
+                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> 
                                                     {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                             </li>
                                             @endif
@@ -315,7 +315,7 @@
                                             @endauth
 
                                             @guest
-                                            <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#viewTender{{$tender->id}}">View</button>
+                                            <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#viewTender{{$tender->id}}">Close</button>
                                             <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#applyTenderNational{{$tender->id}}" data-dismiss="modal" >Apply</button>
                                             @endguest
 
@@ -380,7 +380,7 @@
                                             </li>
                                             @if (isset($tender->tenderLocation->name))
                                             <li class="list-inline-item">
-                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> |
+                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> 
                                                     {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                             </li>
                                             @endif
@@ -429,7 +429,7 @@
                                         </li>
                                         @if (isset($tender->tenderLocation->name))
                                         <li class="list-inline-item">
-                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> |
+                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> 
                                                 {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                         </li>
                                         @endif
@@ -511,7 +511,7 @@
                                             </li>
                                             @if (isset($tender->tenderLocation->name))
                                             <li class="list-inline-item">
-                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> |
+                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> 
                                                     {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                             </li>
                                             @endif
@@ -532,7 +532,7 @@
                                             @endauth
 
                                             @guest
-                                            <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#viewTender{{$tender->id}}">View</button>
+                                            <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#viewTender{{$tender->id}}">Close</button>
                                             <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#applyTenderInternational{{$tender->id}}" data-dismiss="modal" >Apply</button>
                                             @endguest
 
@@ -597,7 +597,7 @@
                                             </li>
                                             @if (isset($tender->tenderLocation->name))
                                             <li class="list-inline-item">
-                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> |
+                                                <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> 
                                                     {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                             </li>
                                             @endif
@@ -646,7 +646,7 @@
                                         </li>
                                         @if (isset($tender->tenderLocation->name))
                                         <li class="list-inline-item">
-                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> |
+                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> 
                                                 {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                         </li>
                                         @endif
