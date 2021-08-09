@@ -25,9 +25,6 @@
                         <a class="nav-link" href="#">ENGLISH |</a>
                     </li>
 
-
-
-
                     @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('register')}}">REGISTER</a>
