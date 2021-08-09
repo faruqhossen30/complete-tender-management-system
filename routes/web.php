@@ -46,6 +46,9 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
     Route::get('client/status/{id}', [ClientController::class, 'changeStatus'])->name('change-status');
     // For Client Applications
     Route::get('application', [ClientApplicationsController::class, 'index'])->name('admin.application');
+    Route::get('application-seen-status/{id}', [ClientApplicationsController::class, 'changeApplicationSeenStatus'])->name('application.seen.status');
+    Route::get('application-confirmation-status/{id}', [ClientApplicationsController::class, 'changeApplicationConfirmationStatus'])->name('application.confirmation.status');
+    Route::get('application-view/{id}', [ClientApplicationsController::class, 'showSingle'])->name('application.show');
 });
 
 

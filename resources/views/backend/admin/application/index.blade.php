@@ -44,9 +44,18 @@
                         <td>{{ Str::substr($tender->tenderInfo->description, 0, 40)}}...</td>
                         <td>{{ Carbon\Carbon::parse($tender->apply_time)->diffForHumans() }}</td>
                         <td>
-                        <a href="#" class="btn btn-primary btn-sm">View</a>
-                        <a href="#" class="btn btn-primary btn-sm">Seen</a>
-                        <a href="#" class="btn btn-primary btn-sm">Confirm</a>
+                        <a href="{{ route('application.show',$tender->id)}}" class="btn btn-primary btn-sm" title="click for show details"><i class="fa fa-eye"></i></a>
+                        @if (1 == $tender->seen)
+                            <button class="btn btn-secondary btn-sm" title="already seen">seen</button>
+                        @elseif(0 === $tender->seen)
+                            <a href="{{ route('application.seen.status',$tender->id)}}" title="click for seen" class="btn btn-success btn-sm">seen</a>
+                        @endif
+
+                        @if (1 == $tender->status)
+                            <button class="btn btn-secondary btn-sm" title="confirmed"><i class="fa fa-check"></i></button>
+                        @elseif(0 === $tender->status)
+                            <a href="{{ route('application.confirmation.status',$tender->id)}}" title="click for confirm" class="btn btn-success btn-sm"><i class="fa fa-check"></i></a>
+                        @endif
                         </td>
                     </tr>
                   @endforeach
