@@ -22,7 +22,7 @@
                 <article class="p-2">
                     <h3>Social Links</h3>
                     <ul class="list-inline">
-                        <li class="list-inline-item bg-social-icon"><a href="#" class="text-white"><i
+                        <li class="list-inline-item bg-social-icon"><a href="https://www.facebook.com/catalystswingslimited" class="text-white" target="_blank"><i
                                     class="fa fa-facebook"></i></a>
                         </li>
                         <li class="list-inline-item bg-social-icon"><a href="#" class="text-white"><i

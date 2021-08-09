@@ -23,9 +23,10 @@ class Apply extends Model
     {
         return $this->hasOne(Tender::class, 'id', 'tender_id');
     }
+
     public function userInfo()
     {
-        return $this->hasOne(User::class, 'id', 'tender_id');
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 
 

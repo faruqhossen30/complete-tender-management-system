@@ -1,7 +1,9 @@
 @extends('frontend.layouts.app')
 @section('title', 'Welcome Page')
 @section('body')
-
+{{-- Search section start  --}}
+@include('frontend.layouts.search')
+{{-- Search section End  --}}
 <div class="container pt-3">
     <div class="row">
         {{-- Tender Section Start --}}
@@ -35,6 +37,9 @@
                                         <div class="">
                                             <span class=""><i class="fa fa-heart"></i></span>
                                         </div>
+                                    </div>
+                                    <div>
+                                        <p> <strong>Catagory : </strong>{{$tender->tenderCategory->name}}</p>
                                     </div>
                                     <div>
                                         <p> <strong>Description: </strong>{{$tender->description}}</p>
@@ -111,11 +116,14 @@
                                         </div>
                                     </div>
                                     <div>
+                                        <p> <strong>Catagory : </strong>{{$tender->tenderCategory->name}}</p>
+                                    </div>
+                                    <div>
                                         <p> <strong>Description: </strong>{{$tender->description}}</p>
                                     </div>
                                     <div class="list-inline">
-                                        <span><strong>Security:</strong> 40000 Tk | </span>
-                                        <span><strong>Budget:</strong> 40000 Tk</span>
+                                        <span><strong>Security:</strong> {{$tender->tenderSecurity}} | </span>
+                                        <span><strong>Budget:</strong> {{$tender->tenderBudget}}</span>
                                     </div>
                                     <hr>
                                     <div class="form-group form-check">
