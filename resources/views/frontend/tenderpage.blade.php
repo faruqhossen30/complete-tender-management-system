@@ -11,7 +11,7 @@
                         <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></div>
                         </div>
-                        <input type="text" class="form-control mr-2" id="inlineFormInputGroup" placeholder="Search Tender">
+                        <input type="text" class="form-control mr-2" id="searchText" placeholder="Search Tender">
                     </div>
                 </li>
                 <li>
@@ -46,6 +46,7 @@
     <div class="row">
             {{-- Tender Section Start --}}
             <div class="col-md-8 col-sm-12">
+                <p id="result"></p>
                 {{-- <div class="row mt-3">
                     <div class="latest-heading ml-3">
                         <h2>Recommended Tenders</h2>
@@ -384,3 +385,26 @@
 
 
 @endsection
+
+@push('script')
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#searchText').on('keyup', function(){
+            var searchText = $(this).val();
+            console.log(searchText);
+                // ajax:{
+                //     // url: APP_URL + '/api/get-knitcard-no',
+                //     url:"{{'search-tender'}}",
+                //     method: 'get',
+                //     dataType: 'json',
+                //     data:{'searchText':searchText},
+                //     success:function(data){
+                //         $('#result').html(data);
+                //     }
+                // };
+          
+            //end of ajax call
+        });
+    });
+</script>
+@endpush

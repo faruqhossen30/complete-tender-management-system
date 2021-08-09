@@ -66,3 +66,4 @@ Route::get('/', [HomePageController::class, 'homepage'])->name('homepage');
 
 Route::get('/tenders', [TenderPageController::class, 'index'])->name('tenders');
 
+Route::get('/search-tender', [TenderPageController::class, 'searchAction'])->name('search-tender');

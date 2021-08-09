@@ -7,7 +7,7 @@ CWL || Log in
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
         <div class="card-header text-center">
-        <a href="#" class="h1">LOGIN</a>
+        <a href="#" class="h1">{{__('LOGIN')}}</a>
         </div>
         <div class="card-body">
             <form method="POST" action="{{ route('login') }}">
@@ -45,7 +45,7 @@ CWL || Log in
                 </div>
                 <div class="row">
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                    <button type="submit" class="btn btn-primary btn-block">{{__('Sign In')}}</button>
                 </div>
                 <!-- /.col -->
                 </div>
@@ -53,10 +53,14 @@ CWL || Log in
 
             <div class="row">
                 <div class="col-6">
-                    <a href="#">forgot your password?</a>
+                    @if (Route::has('password.request'))
+                        <a href="{{ route('password.request') }}">
+                            {{ __('Forgot Your Password?') }}
+                        </a>
+                    @endif
                 </div>
                 <div class="col-6">
-                    <a href="{{ route('register')}}" class="float-right">Register</a>
+                    <a href="{{ route('register')}}" class="float-right">{{__('Register')}}</a>
                 </div>
             </div>
         
