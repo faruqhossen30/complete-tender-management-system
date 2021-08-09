@@ -56,7 +56,7 @@
                                         </li>
                                         @if (isset($tender->tenderLocation->name))
                                         <li class="list-inline-item">
-                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> |
+                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> 
                                                 {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                         </li>
                                         @endif
@@ -141,7 +141,7 @@
                                         </li>
                                         @if (isset($tender->tenderLocation->name))
                                         <li class="list-inline-item">
-                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> |
+                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> 
                                                 {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                         </li>
                                         @endif
@@ -189,7 +189,7 @@
                                     </li>
                                     @if (isset($tender->tenderLocation->name))
                                     <li class="list-inline-item">
-                                        <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> |
+                                        <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> 
                                             {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                     </li>
                                     @endif
