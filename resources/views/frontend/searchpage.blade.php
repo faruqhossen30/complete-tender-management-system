@@ -9,8 +9,8 @@
         {{-- Tender Section Start --}}
         {{-- Tender Section Start --}}
         <div class="col-md-8 col-sm-12">
-            @if ($tenders)
-            <div class="latest-heading ml-3">
+            @if (count($tenders)>0)
+            <div class="latest-heading">
                 <h2>Tender Search Result</h2>
                 <p class="text-secondary">You are searching... '{{$serach_text}}'</p>
             </div>

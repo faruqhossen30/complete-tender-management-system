@@ -2,15 +2,20 @@
 <div class="container-fluid bg-light m-0">
     <div class="container pt-5 pb-5">
         <form action="{{route('search')}}" method="GET" class="d-flex justify-content-center pb-3 pt-3" >
-            @csrf
             <ul class="nav">
                 <li>
                     <div class="input-group">
                         <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></div>
                         </div>
-                        <input name="search" type="text" class="form-control mr-2" id="inlineFormInputGroup" placeholder="Search Tender">
+                        <input name="search" type="text" class="form-control mr-2 @error('search') is-invalid @enderror" id="inlineFormInputGroup" placeholder="Search Tender" required>
+                        @error('search')
+                        <div class="invalid-feedback pl-4">
+                            Please enter keyword ...
+                          </div>
+                        @enderror
                     </div>
+
                 </li>
                 <li>
                     <button type="submit" class="btn btn-secondary">Search <i class="fa fa-search"></i></button>
