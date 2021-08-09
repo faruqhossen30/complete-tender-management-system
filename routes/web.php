@@ -25,6 +25,7 @@ use App\Http\Controllers\FrontEndController\TenderPageController;
 // Controlles for Client dashboard
 use App\Http\Controllers\UserProfleController;
 use App\Http\Controllers\BackendController\User\AppliedTenderController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Auth;
 
 // Route for authincate Admin area
@@ -63,7 +64,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // Font-End Route
 
 Route::get('/', [HomePageController::class, 'homepage'])->name('homepage');
+Route::get('/about', [HomePageController::class, 'about'])->name('about');
+Route::get('/contact', [HomePageController::class, 'contact'])->name('contact');
 
-Route::get('/tenders', [TenderPageController::class, 'index'])->name('tenders');
+Route::get('/tender/all', [TenderPageController::class, 'allTender'])->name('tender.all');
+Route::get('/tender/national', [TenderPageController::class, 'national'])->name('tender.national');
+Route::get('/tender/international', [TenderPageController::class, 'international'])->name('tender.international');
+
+// For Testing purpose
+Route::get('/test', [TestController::class, 'index'])->name('test');
 
 Route::get('/search-tender', [TenderPageController::class, 'searchAction'])->name('search-tender');

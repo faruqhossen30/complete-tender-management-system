@@ -13,21 +13,20 @@ class HomePageController extends Controller
 {
     public function homepage()
     {
-        $tenders = Tender::latest()->take(10)->get();
+        $tenders = Tender::latest()->take(7)->get();
+        $nationaltender = Tender::where('country_id', 4)->latest()->take(7)->get();
+        $international = Tender::where('country_id', '!=', 4)->latest()->take(7)->get();
 
-        // $user_applyed = Apply::where('user_id', auth()->user()->id)->first();
-        // $tender_apply = Apply::where('tender_id' ,4)->get()->first();
-        // $some = DB::table('applies')->where('tender_id', 4)->first();
-
-        // $user = auth()->user()->id;
-
-        // return compact('some');
-
-        // $is_apply =
-
-
-        return view('frontend.homepage', compact('tenders'));
+        return view('frontend.homepage', compact('tenders', 'nationaltender', 'international'));
     }
 
+    public function about()
+    {
+        return view('frontend.about');
+    }
+    public function contact()
+    {
+        return view('frontend.contact');
+    }
 
 }

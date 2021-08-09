@@ -34,11 +34,10 @@
                 @csrf
                 <div class="card-body">
 
-
                     <div class="form-group row">
                     <label for="logiFile" class="col-sm-2 col-form-label">Company Logo </label>
                     <div class="col-sm-10">
-                        <input type="file" name="logo" class="form-control-file @error('logo') is-invalid @enderror" id="logiFile">
+                        <input type="file" name="logo" class="form-control-file @error('logo') is-invalid @enderror" id="logiFile" value="{{ old('logo') }}" required>
                         @error('logo')
                         <span class="text-danger">{{$message}}</span>
                         @enderror
@@ -49,7 +48,7 @@
                   <div class="form-group row">
                     <label for="tradeLicence" class="col-sm-2 col-form-label">Trade Licence No:</label>
                     <div class="col-sm-10">
-                      <input type="text" name="trade_licence_no" class="form-control @error('trade_licence_no') is-invalid @enderror" id="tradeLicence" placeholder="Licence No"   >
+                      <input type="text" name="trade_licence_no" class="form-control @error('trade_licence_no') is-invalid @enderror" id="tradeLicence" placeholder="Licence No"   value="{{ old('trade_licence_no') }}">
 
                         @error('trade_licence_no')
                             <span class="text-danger">{{$message}}</span>
@@ -62,7 +61,7 @@
                   <div class="form-group row">
                     <label for="pinID" class="col-sm-2 col-form-label">PIN No:</label>
                     <div class="col-sm-10">
-                      <input type="text" name="pin_no" class="form-control @error('pin_no') is-invalid @enderror" id="pinID" placeholder="PIN No">
+                      <input type="text" name="pin_no" class="form-control @error('pin_no') is-invalid @enderror" id="pinID" placeholder="PIN No" value="{{ old('pin_no') }}">
                         @error('pin_no')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
@@ -73,7 +72,7 @@
                   <div class="form-group row">
                     <label for="binID" class="col-sm-2 col-form-label">BIN No:</label>
                     <div class="col-sm-10">
-                      <input type="text" name="bin_no" class="form-control @error('bin_no') is-invalid @enderror" id="binID" placeholder="BIN No">
+                      <input type="text" name="bin_no" class="form-control @error('bin_no') is-invalid @enderror" id="binID" placeholder="BIN No" value="{{ old('bin_no') }}">
                         @error('bin_no')
                             <span class="text-danger">{{$message}}</span>
                         @enderror
@@ -84,7 +83,7 @@
                   <div class="form-group row">
                     <label for="nidID" class="col-sm-2 col-form-label">NID No:</label>
                     <div class="col-sm-10">
-                      <input type="text" name="nid_no" class="form-control  @error('nid_no') is-invalid @enderror" id="nidID" placeholder="NID No">
+                      <input type="text" name="nid_no" class="form-control  @error('nid_no') is-invalid @enderror" id="nidID" placeholder="NID No" value="{{ old('nid_no') }}">
                         @error('nid_no')
                             <span class="text-danger">{{$message}}</span>
                         @enderror

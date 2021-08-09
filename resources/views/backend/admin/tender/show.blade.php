@@ -40,7 +40,7 @@
                     <td>2.</td>
                     <td>Tender Type</td>
                     {{-- <td><strong> {{$tender->tender_type_id}}</strong></td> --}}
-                    <td><strong> {{$tender->tenderType->name}}</strong></td>
+                    <td><strong> {{$tender->tenderType->name ?? "N/A"}}</strong></td>
                   </tr>
 
                   <tr>
@@ -58,13 +58,13 @@
                   <tr>
                     <td>5.</td>
                     <td>Country</td>
-                    <td><strong>{{$tender->tenderCountry->name}}</strong></td>
+                    <td><strong>{{$tender->tenderCountry->name ?? "N/A"}}</strong></td>
                   </tr>
 
                   <tr>
                     <td>5.</td>
                     <td>Location</td>
-                    <td><strong>{{$tender->tenderLocation->name}}</strong></td>
+                    <td><strong>{{$tender->tenderLocation->name ?? "N/A"}}</strong></td>
                   </tr>
                     <tr>
                     <td>4.</td>

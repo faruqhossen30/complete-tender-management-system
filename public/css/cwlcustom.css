@@ -1,24 +1,43 @@
-/* For Top bar */
+/* For Top bar Start*/
 .cwl-bg{
     background-color: #BC1F2D;
 }
+.cwl-text-color{
+    color: #BC1F2D;
+}
+
+.list-group-item i{
+    color: #BC1F2D !important;
+    font-size: 18px;
+    margin-right: 3px;
+}
 .cwl-info p{
     color: white;
+    font-size: 13px;
 }
 .cwl-social ul li a{
     color: white !important;
     line-height: 1;
+    padding: .5rem !important;
+    font-size: 13px;
 }
+
+
+
+/* For Top bar End*/
 
 .navbar-brand img{
     height: 50px;
-    widows: 150px;
+    background: white;
 }
 
 .navbar-nav a{
     color: white !important;
     text-transform: uppercase;
 }
+
+
+
 /* For Slider */
 .cwl-slider img{
     display: block;
@@ -67,3 +86,36 @@
     background-color: blue;
 }
 /* Footer End */
+/* Contact page start */
+.contact-area{
+    background-size: cover !important;
+    height: 85vh;
+}
+/* Contact page End */
+/* Footer Img */
+
+.footer-menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.footer-menu ul li{
+    border-bottom: 1px solid black;
+    text-transform: uppercase;
+    padding: 5px;
+}
+.footer-menu ul li:last-child{
+    border-bottom: none;
+}
+.footer-menu ul li:hover{
+    background: #BC1F2D;
+    color: white;
+}
+.footer-menu ul li:hover a{
+    color: white;
+    text-decoration: none;
+}
+.footer-menu ul li a{
+    color: black;
+}
+
