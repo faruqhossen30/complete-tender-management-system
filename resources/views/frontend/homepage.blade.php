@@ -96,7 +96,11 @@
                                             @endauth
 
                                             @guest
+<<<<<<< HEAD
                                             <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#viewTender{{$tender->id}}">Close</button>
+=======
+                                            <button class="btn btn-secondary btn-sm" data-toggle="modal" data-dismiss="modal">Close</button>
+>>>>>>> 6a80fdb8903c3097afba11b9ec76af7c742e69fc
                                             <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#applyTender{{$tender->id}}" data-dismiss="modal" >Apply</button>
                                             @endguest
 
@@ -142,8 +146,8 @@
                                             <p> <strong>Description: </strong>{{$tender->description}}</p>
                                         </div>
                                         <div class="list-inline">
-                                            <span><strong>Security:</strong> 40000 Tk | </span>
-                                            <span><strong>Budget:</strong> 40000 Tk</span>
+                                            <span><strong>Security:</strong> {{$tender->tenderSecurity}} | </span>
+                                            <span><strong>Budget:</strong> {{$tender->tenderBudget}}</span>
                                         </div>
                                         <hr>
                                         <div class="form-group form-check">
@@ -315,7 +319,11 @@
                                             @endauth
 
                                             @guest
+<<<<<<< HEAD
                                             <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#viewTender{{$tender->id}}">Close</button>
+=======
+                                            <button class="btn btn-secondary btn-sm" data-toggle="modal" data-dismiss="modal">Close</button>
+>>>>>>> 6a80fdb8903c3097afba11b9ec76af7c742e69fc
                                             <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#applyTenderNational{{$tender->id}}" data-dismiss="modal" >Apply</button>
                                             @endguest
 
@@ -361,8 +369,8 @@
                                             <p> <strong>Description: </strong>{{$tender->description}}</p>
                                         </div>
                                         <div class="list-inline">
-                                            <span><strong>Security:</strong> 40000 Tk | </span>
-                                            <span><strong>Budget:</strong> 40000 Tk</span>
+                                            <span><strong>Security:</strong> {{$tender->tenderSecurity}} | </span>
+                                            <span><strong>Budget:</strong> {{$tender->tenderBudget}}</span>
                                         </div>
                                         <hr>
                                         <div class="form-group form-check">
@@ -532,7 +540,11 @@
                                             @endauth
 
                                             @guest
+<<<<<<< HEAD
                                             <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#viewTender{{$tender->id}}">Close</button>
+=======
+                                            <button class="btn btn-secondary btn-sm" data-toggle="modal" data-dismiss="modal">Close</button>
+>>>>>>> 6a80fdb8903c3097afba11b9ec76af7c742e69fc
                                             <button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#applyTenderInternational{{$tender->id}}" data-dismiss="modal" >Apply</button>
                                             @endguest
 
@@ -578,8 +590,8 @@
                                             <p> <strong>Description: </strong>{{$tender->description}}</p>
                                         </div>
                                         <div class="list-inline">
-                                            <span><strong>Security:</strong> 40000 Tk | </span>
-                                            <span><strong>Budget:</strong> 40000 Tk</span>
+                                            <span><strong>Security:</strong> {{$tender->tenderSecurity}} | </span>
+                                            <span><strong>Budget:</strong> {{$tender->tenderBudget}}</span>
                                         </div>
                                         <hr>
                                         <div class="form-group form-check">
