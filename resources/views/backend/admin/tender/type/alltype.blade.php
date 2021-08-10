@@ -54,7 +54,7 @@
                     </form>
 
                     <hr>
-                <table class="table table-bordered">
+                <table class="table table-bordered" id="myTable">
                     <thead>
                       <tr>
                         <th scope="col">S.N</th>

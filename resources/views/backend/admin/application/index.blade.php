@@ -81,6 +81,7 @@
         }
     </style>
 @endpush
+
 @push('js')
     <script src="{{asset('public/js/jquery.dataTables.min.js')}}"></script>
     <script>
