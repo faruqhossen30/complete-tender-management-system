@@ -19,6 +19,9 @@
     <div class="col-md-11">
         <table class="table table-bordered m-4">
             <tr>
+                <th colspan="4" class="text-center">USER INFORMATION</th>
+            </tr>
+            <tr>
                 <th>Name:</th>
                 <td>{{ $application->userInfo->name }}</td>
                 <th>Email:</th>
@@ -28,33 +31,41 @@
                 <th>Mobile:</th>
                 <td>{{ $application->userInfo->mobile }}</td>
                 <th>Address:</th>
-                <td>{{ $application->userInfo->address}}</td>
+                <td>{{ $application->userInfo->address }}</td>
             </tr>
             <tr>
                 <th>Vendor:</th>
                 <td>{{ $application->userInfo->vendor }}</td>
                 <th>Country:</th>
-                <td>{{ $application->userInfo->user_country}}</td>
+                <td>{{ $application->userInfo->user_country }}</td>
+            </tr>
+            <tr>
+                <th colspan="4" class="text-center">TENDER INFORMATION</th>
             </tr>
             <tr>
                 <th>Tender Id:</th>
                 <td>{{ $application->tenderInfo->tenderID }}</td>
-                <th>Tender Description</th>
-                <td>{{ $application->tenderInfo->description}}</td>
+                <th>Last Date:</th>
+                <td>{{ $application->tenderInfo->lastDate}}</td>                
             </tr>
             <tr>
+                <th>Tender Description</th>
+                <td>{{ $application->tenderInfo->description }}</td>
                 <th>Security:</th>
                 <td>{{ $application->tenderInfo->tenderSecurity }}</td>
-                <th>Last Date:</th>
-                <td>{{ $application->tenderInfo->lastDate}}</td>
             </tr>
-            {{-- <tr>
-                <th>Tender Id:</th>
-                <td>{{ $application->tenderInfo->tenderID }}</td>
-                <th>Tender Description</th>
-                <td>{{ $application->userInfo}}</td>
-            </tr> --}}
-            
+            <tr>
+                <th>Tender Category:</th>
+                <td>{{ $application->tenderInfo->tenderCategory->name }}</td>
+                <th>Department:</th>
+                <td>{{ $application->tenderInfo->tenderDepartment->name }}</td>
+            </tr>
+            <tr>
+                <th>Country:</th>
+                <td>{{ $application->tenderInfo->tenderCountry->name }}</td>
+                <th>Location:</th>
+                <td>{{ $application->tenderInfo->tenderLocation->name }}</td>
+            </tr>
         </table>
     </div>
 </div>
