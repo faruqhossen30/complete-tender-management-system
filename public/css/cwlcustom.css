@@ -22,7 +22,14 @@
     font-size: 13px;
 }
 
+.dropdown-menu .dropdown-item:hover{
+    background: gray;
+    color: gray;
 
+}
+.navbar_account{
+    font-size: 13px;
+}
 
 /* For Top bar End*/
 

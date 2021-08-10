@@ -9,14 +9,15 @@
         {{-- Tender Section Start --}}
         {{-- Tender Section Start --}}
         <div class="col-md-8 col-sm-12">
-            @if ($tenders)
-            <div class="latest-heading ml-3">
+            @if (count($tenders)>0)
+            <div class="latest-heading">
                 <h2>Tender Search Result</h2>
                 <p class="text-secondary">You are searching... '{{$serach_text}}'</p>
             </div>
             @else
-            <h2>No Tender found as your seach </h2>
-            <p class="text-secondary">You are searching... '{{$serach_text}}'</p>
+            <h3>Sorry, No tender found as your search keyword </h3>
+            <p class="text-secondary m-0">You are searching... '{{$serach_text}}'</p>
+            <p class="text-secondary"><small>Please search with another keyword ... </small></p>
             @endif
             @foreach ($tenders as $tender)
             <div class="">

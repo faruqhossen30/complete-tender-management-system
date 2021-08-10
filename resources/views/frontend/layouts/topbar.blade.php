@@ -24,6 +24,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">ENGLISH |</a>
                     </li>
+
                     @guest
                     <li class="nav-item">
                         <a class="nav-link" href="{{url('register')}}">REGISTER</a>
@@ -33,16 +34,32 @@
                       </li>
                     @endguest
                     @auth
-                        @if (auth()->user()->is_admin == 1)
-                            <li class="nav-item ">
-                                <a class="nav-link" href="{{url('/admin')}}">Admin</a>
-                            </li>
-                        @elseif (auth()->user()->is_admin == 0)
-                        <li class="nav-item ">
-                            <a class="nav-link" href="{{url('/user')}}">My Account</a>
-                        </li>
+                    <li class="nav-item">
+                        <div class="btn-group navbar_account">
+                            <button class="btn btn-secondary cwl-bg btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Account
+                            </button>
+                            <div class="dropdown-menu cwl-bg">
+                                @if (auth()->user()->is_admin == 1)
+                                <a class="dropdown-item" href="{{url('/admin')}}">Admin</a>
+                                <a class="dropdown-item" href="{{url('/admin')}}">Dashboard</a>
+                                @elseif (auth()->user()->is_admin == 0)
+                                <a class="dropdown-item" href="{{url('/user')}}">My Account</a>
+                                <a class="dropdown-item" href="{{url('/user')}}">Dashboard</a>
+                                @endif
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
 
-                        @endif
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+
+                            </div>
+                        </div>
+                    </li>
                     @endauth
 
                 </ul>

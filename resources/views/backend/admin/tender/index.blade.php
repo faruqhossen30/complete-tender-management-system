@@ -8,8 +8,8 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active">User Profile</li>
+                    <li class="breadcrumb-item"><a href="{{route('homepage')}}">Home</a></li>
+                    <li class="breadcrumb-item active">Tender</li>
                 </ol>
             </div>
         </div>
@@ -55,23 +55,23 @@
                 <td>4.pdf</td>
                 <td>5.pdf</td>
                 <td>6.pdf</td>
-                <td>7.pdf</td>                
-                <td> 
+                <td>7.pdf</td>
+                <td>
                 <div class="clearfix">
                         <a style="float:left;margin-right:5px" href="#"class="btn btn-success"> Details </a>
                         <a style="float:left; margin-right:5px" href="#" class="btn btn-success"> edit </a>
-                        <form style="float:left; margin-right:5px;" onsubmit="return confirm('Are you sure?')" action="#" method="POST" class="btn btn-danger btn-sm rounded-5" type="button"> 
-                            <!-- @csrf 
+                        <form style="float:left; margin-right:5px;" onsubmit="return confirm('Are you sure?')" action="#" method="POST" class="btn btn-danger btn-sm rounded-5" type="button">
+                            <!-- @csrf
                             @method("delete")                       -->
                         <input type="submit" name="btnsubmit" value="delete">
                         </form>
                     </div>
 
 
-                
+
                 </td>
             </tr>
-            
+
             </tbody>
         </table>
         </div>

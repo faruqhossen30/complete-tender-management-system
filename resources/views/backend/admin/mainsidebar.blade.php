@@ -80,35 +80,29 @@
             <!-- Tender management -->
             <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-            <i class="fa fa-file" aria-hidden="true"></i>
+            <i class="fa fa-tasks" aria-hidden="true"></i>
               <p>
-                Tender
+                Tenders
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
            <ul class="nav nav-treeview">
               <li class="nav-item">
               <a href="{{url('admin/tender')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>All tender</p>
+                <i class="fas fa-border-all nav-icon"></i>
+                  <p >All tender</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url('admin/tender/create')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                    <i class="fas fa-upload nav-icon"></i>
                   <p>Uoload tender</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{url('admin/tender')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                    <i class="fas fa-table nav-icon"></i>
                   <p>Manage Tender</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tender application</p>
                 </a>
               </li>
             </ul>
@@ -118,7 +112,7 @@
             <!-- Country management -->
             <li class="nav-item has-treeview">
             <a href="{{url('admin/country')}}" class="nav-link">
-            <i class="fa fa-file" aria-hidden="true"></i>
+            <i class="fa fa-globe" aria-hidden="true"></i>
               <p>
                 Country
                 <i class="right fas fa-angle-left"></i>
@@ -127,7 +121,7 @@
            <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{url('admin/country')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                    <i class="fas fa-table nav-icon"></i>
                   <p>Manage Country</p>
                 </a>
               </li>
@@ -138,7 +132,7 @@
             <!-- Location management -->
             <li class="nav-item has-treeview">
             <a href="{{url('admin/location')}}" class="nav-link">
-            <i class="fa fa-file" aria-hidden="true"></i>
+            <i class="fa fa-compass" aria-hidden="true"></i>
               <p>
                 Location
                 <i class="right fas fa-angle-left"></i>
@@ -147,7 +141,7 @@
            <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{url('admin/location')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                    <i class="fas fa-table nav-icon"></i>
                   <p>Manage Location</p>
                 </a>
               </li>
@@ -158,7 +152,7 @@
             <!-- Location management -->
             <li class="nav-item has-treeview">
             <a href="{{url('admin/type')}}" class="nav-link">
-            <i class="fa fa-file" aria-hidden="true"></i>
+            <i class="fa fa-certificate" aria-hidden="true"></i>
               <p>
                 Type
                 <i class="right fas fa-angle-left"></i>
@@ -167,7 +161,7 @@
            <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{url('admin/type')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                    <i class="fas fa-table nav-icon"></i>
                   <p>Manage Type</p>
                 </a>
               </li>
@@ -178,7 +172,7 @@
             <!-- Category management -->
             <li class="nav-item has-treeview">
             <a href="{{url('admin/category')}}" class="nav-link">
-            <i class="fa fa-file" aria-hidden="true"></i>
+            <i class="fa fa-ethernet" aria-hidden="true"></i>
               <p>
                 Category
                 <i class="right fas fa-angle-left"></i>
@@ -187,7 +181,7 @@
            <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{url('admin/category')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                    <i class="fas fa-table nav-icon"></i>
                   <p>Manage Category</p>
                 </a>
               </li>
@@ -197,7 +191,7 @@
             <!-- Department management -->
             <li class="nav-item has-treeview">
             <a href="{{url('admin/department')}}" class="nav-link">
-            <i class="fa fa-file" aria-hidden="true"></i>
+            <i class="fa fa-building" aria-hidden="true"></i>
               <p>
                 Department
                 <i class="right fas fa-angle-left"></i>
@@ -206,7 +200,7 @@
            <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{url('admin/department')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                    <i class="fas fa-table nav-icon"></i>
                   <p>Manage Department</p>
                 </a>
               </li>
