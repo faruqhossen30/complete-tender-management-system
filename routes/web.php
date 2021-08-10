@@ -52,6 +52,7 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
 });
 
 
+
 // For User Route
 Route::middleware(['auth', 'is_client'])->prefix('user')->group(function () {
     Route::get('/', [UserHomeController::class, 'index']);
@@ -62,6 +63,7 @@ Route::middleware(['auth', 'is_client'])->prefix('user')->group(function () {
     Route::get('/apply', [ApplyUserController::class, 'index'])->name('apply');
     Route::post('/apply', [ApplyUserController::class, 'applyConfirm'])->name('apply.confirm');
     Route::get('application', [AppliedTenderController::class, 'index'])->name('application');
+    Route::get('/{id}-tender-detail', [AppliedTenderController::class, 'showTenderDetails'])->name('show.tender.details');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
