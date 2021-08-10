@@ -8,7 +8,7 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{ URL::to('/')}}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('homepage')}}">Home</a></li>
                     <li class="breadcrumb-item active">Tender Applications</li>
                 </ol>
             </div>
@@ -54,7 +54,7 @@
                 <th>Tender Description</th>
                 <td>{{ $application->userInfo}}</td>
             </tr> --}}
-            
+
         </table>
     </div>
 </div>
