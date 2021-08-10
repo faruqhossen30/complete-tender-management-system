@@ -30,21 +30,6 @@
         </div>
     </div>
     @endif
-    @if (session('apply'))
-    <div classs="container p-5">
-        <div class="row no-gutters fixed-top">
-            <div class="col-6 offset-3">
-                <div class="alert alert-success fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                     <h4 class="alert-heading">Profile has been updated !</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-    @endif
-
     @yield('body')
 
     {{-- Footer  --}}
