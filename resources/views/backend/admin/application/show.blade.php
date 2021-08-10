@@ -45,8 +45,8 @@
             <tr>
                 <th>Tender Id:</th>
                 <td>{{ $application->tenderInfo->tenderID }}</td>
-                <th>Last Date:</th>
-                <td>{{ $application->tenderInfo->lastDate}}</td>                
+                <th>Tender Budget:</th>
+                <td>{{ $application->tenderInfo->tenderBudget }}</td>
             </tr>
             <tr>
                 <th>Tender Description</th>
@@ -66,6 +66,13 @@
                 <th>Location:</th>
                 <td>{{ $application->tenderInfo->tenderLocation->name }}</td>
             </tr>
+            <tr>
+                <th>Last Date:</th>
+                <td>{{ $application->tenderInfo->lastDate}}</td>
+                <th></th>
+                <td></td>
+            </tr>
+
         </table>
     </div>
 </div>
