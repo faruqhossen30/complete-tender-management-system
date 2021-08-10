@@ -20,18 +20,18 @@
 <div class="content">
   <div class="container">
     <div class="row">
-          <div class="col-lg-3 col-6">
+        <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-info">
+            <div class="small-box bg-primary">
               <div class="inner">
-                <h3>50</h3>
+                <h3>Total : {{DB::table('tenders')->get()->count();}}<sup style="font-size: 20px"></sup></h3>
 
-                <p>New Orders</p>
+                <p>Tender Uploaded on site</p>
               </div>
               <div class="icon">
-                <i class="ion ion-bag"></i>
+                <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('tender.all')}}" class="small-box-footer">Find or Search Tender<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -39,14 +39,24 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>20<sup style="font-size: 20px"></sup></h3>
+                  @php
+                      $applyedTenders = App\Models\Tender\Apply::where('user_id', auth()->user()->id)->get()->count();
+                  @endphp
+                <h3>Applyed:
+                    @if ($applyedTenders)
+                    {{$applyedTenders}}
+                    @else
+                        0
+                    @endif
 
-                <p>Week Running Program</p>
+                </h3>
+
+                <p>Applyed tender list</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('application')}}" class="small-box-footer">All applyed tender<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -54,29 +64,17 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-              <h3>100<sup style="font-size: 20px">%</sup></h3>
+                  @php
+                      $applyedTenders = App\Models\Tender\Apply::where('user_id', auth()->user()->id)->where('status', 0)->get()->count();
+                  @endphp
+              <h3>Pending : {{$applyedTenders}}</h3>
 
-                <p>Clients Support</p>
+                <p>Pending tender list</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>420</h3>
-
-                <p>Program Complete</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="{{route('application')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
