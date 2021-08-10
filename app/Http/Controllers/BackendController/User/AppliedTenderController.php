@@ -5,6 +5,7 @@ namespace App\Http\Controllers\BackendController\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Tender\Apply;
+use Exception;
 
 class AppliedTenderController extends Controller
 {
@@ -15,5 +16,14 @@ class AppliedTenderController extends Controller
         // return $applyedTenders;
 
         return view('backend.user.application.index', compact('applyedTenders'));
+    }
+    public function showTenderDetails($id)
+    {
+        try {
+            $application = Apply::find($id);
+            return view('backend.user.application.show', compact('application'));
+        } catch (Exception $e) {
+            return response()->json(["error" => "Can't show details!!!"]);
+        }
     }
 }

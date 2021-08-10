@@ -28,13 +28,21 @@
                                 <td>{{$application->tenderInfo->tenderID}}</td>
                                 <td>{{substr($application->tenderInfo->description,0,50)}}....</td>
                                 <td>
-                                    <button class="btn btn-danger btn-sm">Not Seen</button>
-                                    <button class="btn btn-warning btn-sm">Pending</button>
+                                    @if ("0"==$application->seen)
+                                        <button class="btn btn-sm btn-warning">Not Seen</button>
+                                    @elseif("1"==$application->seen)
+                                        <button class="btn btn-sm btn-success">Seen</button>
+                                    @endif
+                                    @if ("0"==$application->status)
+                                        <button class="btn btn-sm btn-warning">Pending</button>
+                                    @elseif("1"==$application->status)
+                                        <button class="btn btn-sm btn-success">Confirmed</button>
+                                    @endif
                                 </td>
                                 {{-- <td>{{$application->apply_time->diffForHumans}}</td> --}}
                                 <td>{{ Carbon\Carbon::parse($application->apply_time)->diffForHumans() }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-secondary btn-sm">View</a>
+                                    <a href="{{ route('show.tender.details',$application->id) }}" class="btn btn-info btn-sm">View</a>
                                 </td>
                             </tr>
                           @endforeach

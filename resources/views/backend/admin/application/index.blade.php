@@ -44,17 +44,17 @@
                         <td>{{ Str::substr($tender->tenderInfo->description, 0, 40)}}...</td>
                         <td>{{ Carbon\Carbon::parse($tender->apply_time)->diffForHumans() }}</td>
                         <td>
-                        <a href="{{ route('application.show',$tender->id)}}" class="btn btn-primary btn-sm" title="click for show details"><i class="fa fa-eye"></i></a>
+                        <a href="{{ route('application.show',$tender->id)}}" class="btn btn-primary btn-sm" title="click for show details">View</a>
                         @if ("1" == $tender->seen)
-                            <button class="btn btn-success btn-sm" title="already seen">seen</button>
+                            <button class="btn btn-success btn-sm" title="already seen">Seen</button>
                         @elseif("0" == $tender->seen)
-                            <a href="{{ route('application.seen.status',$tender->id)}}" title="click for seen" class="btn btn-warning btn-sm">seen</a>
+                            <a href="{{ route('application.seen.status',$tender->id)}}" title="click for seen" class="btn btn-warning btn-sm">Seen</a>
                         @endif
 
                         @if ("1" == $tender->status)
-                            <button class="btn btn-success btn-sm" title="confirmed"><i class="fa fa-check"></i></button>
+                            <button class="btn btn-success btn-sm" title="confirmed">Confirmed</button>
                         @elseif("0" == $tender->status)
-                            <a href="{{ route('application.confirmation.status',$tender->id)}}" title="click for confirm" class="btn btn-warning btn-sm" onclick="return(confirm('Are you sure confirm this???'))"><i class="fa fa-check"></i></a>
+                            <a href="{{ route('application.confirmation.status',$tender->id)}}" title="click for confirm" class="btn btn-warning btn-sm" onclick="return(confirm('Are you sure confirm this???'))">Confirm</a>
                         @endif
                         </td>
                     </tr>

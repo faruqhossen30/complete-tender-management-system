@@ -21,7 +21,7 @@
             <tr>
                 <th colspan="4" class="text-center">
                     USER INFORMATION
-                    <a href="{{ route('profile') }}">Documents</a>
+                    {{-- <a href="{{ route('profile') }}">Documents</a> --}}
                 </th>
             </tr>
             <tr>
