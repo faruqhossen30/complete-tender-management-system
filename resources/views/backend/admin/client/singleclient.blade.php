@@ -68,7 +68,7 @@
                   <tr>
                     <td>7.</td>
                     <td>All Document</td>
-                    <td><strong><a href="" class="btn btn-success btn-sm">Check Documents</a></strong></td>
+                    <td><strong><a href="{{route('document', $client->id)}}" class="btn btn-success btn-sm">Check Documents</a></strong></td>
                   </tr>
                   <tr>
                     <td>8.</td>
