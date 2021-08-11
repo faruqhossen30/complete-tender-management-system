@@ -108,7 +108,7 @@
                     @else
                     <h3>Your Profile is not completed </h3>
                     <p class="text-secondary">Please Update your profile for apply tender </p>
-                <a href="{{route('profile.update')}}" class="btn btn-primary">Update Profile</a>
+                <a href="{{route('profile.upload')}}" class="btn btn-primary">Update Profile</a>
                     @endif
 
 

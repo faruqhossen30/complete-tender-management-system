@@ -43,8 +43,8 @@
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="{{route('application')}}" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>All Applications</p>
+                        <i class="fas fa-border-all nav-icon"></i>
+                        <p>My Applications</p>
                     </a>
                 </li>
 
@@ -56,25 +56,37 @@
           <!-- manage User -->
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-            <i class="material-icons" style="font-size:16px;">&#xe7fb;</i>
+                <i class="fas fa-user-circle"></i>
                 <p>
-                Profile Manage
+                My Profile
                 <i class="right fas fa-angle-left"></i>
                 </p>
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                 <a href="{{route('profile')}}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>My Information</p>
+                    <i class="fas fa-table nav-icon"></i>
+                    <p>Al Information</p>
                 </a>
                 </li>
+                @php
+                    $profile = DB::table('user_profiles')->where('user_id', auth()->user()->id)->first();
+                @endphp
+                @if ($profile)
                 <li class="nav-item">
-                <a href="{{route('profile.update')}}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Update Documents</p>
-                </a>
+                    <a href="{{route('profile.edit', $profile->user_id)}}" class="nav-link">
+                        <i class="fas fa-edit nav-icon"></i>
+                        <p>Update Documents</p>
+                    </a>
                 </li>
+                @else
+                <li class="nav-item">
+                    <a href="{{route('profile.upload')}}" class="nav-link">
+                        <i class="fas fa-upload  nav-icon"></i>
+                        <p>Upload Documents</p>
+                    </a>
+                </li>
+                @endif
             </ul>
             </li>
                 <!--End manage User -->
