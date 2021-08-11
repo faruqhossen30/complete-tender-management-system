@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Tender\Apply;
 use App\Models\Tender\Tender;
 use Exception;
+use PDF;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\HttpKernel\HttpCache\Esi;
@@ -58,10 +59,35 @@ class ClientApplicationsController extends Controller
     {
         try {
             $application = Apply::find($id);
-            // $application = DB::table('applies')
-            // ->join()
-            // return $application;
             return view('backend.admin.application.show', compact('application'));
+        } catch (Exception $e) {
+            return response()->json(["error" => "an error ocurd"]);
+        }
+    }
+    public function exportPDF($id)
+    {
+        try {
+            $application = Apply::find($id);
+
+            $data = [
+                'companyName' => $application->userInfo->name,
+                'companyEmail' => $application->userInfo->email,
+                'companyPhone' => $application->userInfo->mobile,
+                'companyAddress' => $application->userInfo->address,
+                'tenderNumber' => $application->tenderInfo->tenderID,
+                'tenderType' => $application->tenderInfo->tenderType->name,
+                'tenderCategory' => $application->tenderInfo->tenderCategory->name,
+                'tenderDepartment' => $application->tenderInfo->tenderDepartment->name,
+                'tenderCountry' => $application->tenderInfo->tenderCountry->name,
+                'tenderLocation' => $application->tenderInfo->tenderLocation->name,
+                'tenderDescription' => $application->tenderInfo->description,
+                'tenderSecurity' => $application->tenderInfo->tenderSecurity,
+                'tenderBudget' => $application->tenderInfo->tenderBudget,
+                'lastDate' => $application->tenderInfo->lastDate,
+
+            ];
+            $pdf = PDF::loadView('backend.admin.application.application-pdf', $data);
+            return $pdf->stream();
         } catch (Exception $e) {
             return response()->json(["error" => "an error ocurd"]);
         }
