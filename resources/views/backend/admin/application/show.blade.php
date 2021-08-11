@@ -17,7 +17,7 @@
 </section>
 <div class="row">
     <div class="col-12">
-        <a href="{{ route('application.pdf',$application->id)}}" class="btn btn-primary btn-sm float-right mr-4"><i class="fa fa-print"></i> Print</a>
+        <a href="{{ route('application.pdf',$application->id)}}" class="btn btn-primary btn-sm float-right mr-4"><i class="fa fa-print"></i> Print Now</a>
 
     </div>
 </div>
