@@ -4,6 +4,7 @@ namespace App\Http\Controllers\BackendController\Admin\Client;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\UserProfile;
 use Exception;
 use Illuminate\Http\Request;
 
@@ -106,4 +107,18 @@ class ClientController extends Controller
             return 'An error ocurd';
         }
     }
+
+
+    public function viewDocument($id)
+    {
+        $user = User::where('id', $id)->first();
+        $document = UserProfile::where('user_id', $id)->first();
+
+        // return $profile;
+        return view('backend.admin.client.document', compact('document', 'user'));
+    }
+
+
+
+
 }

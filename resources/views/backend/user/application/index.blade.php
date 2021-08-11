@@ -53,3 +53,27 @@
     </div>
 </div>
 @endsection
+
+@push('css')
+<link rel="stylesheet" href="{{asset('public/css/jquery.dataTables.min.css')}}">
+    <style>
+        .dataTables_length {
+            padding: 10px;
+        }
+        .dataTables_filter{
+            padding: 10px;
+        }
+        .dataTables_info {
+            margin-left: 10px;
+        }
+    </style>
+@endpush
+
+@push('js')
+    <script src="{{asset('public/js/jquery.dataTables.min.js')}}"></script>
+    <script>
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
+    </script>
+@endpush

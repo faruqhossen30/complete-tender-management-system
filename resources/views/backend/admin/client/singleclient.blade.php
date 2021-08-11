@@ -17,18 +17,18 @@
 </section>
   <!-- Profile Image -->
   <div class="row">
-      <div class="col">
+      <div class="col-10 offset-1">
         <div class="card card-primary card-outline">
             <div class="card-body box-profile">
               <div class="text-center">
                 <img class="profile-user-img img-fluid img-circle"
-              src="{{asset('images/logo.png')}}"
+              src="{{asset('public/images/logo.png')}}"
                      alt="User profile picture">
               </div>
 
               <h3 class="profile-username text-center">{{$client->name}}</h3>
 
-              <p class="text-muted text-center">House 43, Road 4/A, dhanmondi, Dhaka</p>
+              <p class="text-muted text-center">{{$client->address}}</p>
 
               <table class="table table-bordered mb-3">
                 <thead>
@@ -60,20 +60,27 @@
                     <td><strong>{{$client->mobile}}</strong></td>
                   </tr>
                   <tr>
-                    <td>4.</td>
-                    <td>Created at</td>
+                    <td>6.</td>
+                    <td>Vendor Type</td>
+                    <td><strong>{{$client->vendor}}</strong></td>
+                  </tr>
+                  <tr>
+                  <tr>
+                    <td>7.</td>
+                    <td>All Document</td>
+                    <td><strong><a href="{{route('document', $client->id)}}" class="btn btn-success btn-sm">Check Documents</a></strong></td>
+                  </tr>
+                  <tr>
+                    <td>8.</td>
+                    <td>Join Date</td>
                     <td><strong>{{$client->created_at}}</strong></td>
                   </tr>
 
                 </tbody>
               </table>
 
-              <a href="{{url('admin/client/'.$client->id.'/edit')}}" class="btn btn-primary"><b>Edit</b></a>
-              <form action="{{url('admin/client/'.$client->id)}}" method="post" style="display:inline-block">
-                @csrf
-                @method('DELETE')
-                <button type="submit" onclick="confirm('Sure ? Want to delete company ?')" class="btn btn-danger">Delete</button>
-            </form>
+              <a href="{{route('client.index')}}" class="btn btn-success">Client List</a>
+
             </div>
             <!-- /.card-body -->
           </div>

@@ -26,8 +26,8 @@
         <table class="table table-bordered m-4">
             <tr>
                 <th colspan="4" class="text-center">
-                    USER INFORMATION
-                    <a href="{{ route('profile') }}">Documents</a>
+                    CLIENT INFORMATION
+                    <a href="{{ route('document', $application->userInfo->id) }}" target="_blank" class="badge badge-success ml-3">View Documents</a>
                 </th>
             </tr>
             <tr>

@@ -13,6 +13,7 @@ use App\Http\Controllers\BackendController\Admin\Tender\CategoryController; // o
 use App\Http\Controllers\BackendController\Admin\Tender\TypeController; // ok
 use App\Http\Controllers\BackendController\Admin\Tender\DepartmentController; // ok
 use App\Http\Controllers\BackendController\User\UserHomeController;
+use App\Http\Controllers\BackendController\Admin\Client\ClientDocumentController;
 // Client Applictions
 use App\Http\Controllers\BackendController\Admin\Tender\Application\ClientApplicationsController;
 
@@ -43,7 +44,9 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
     Route::resource('type', TypeController::class);
     Route::resource('department', DepartmentController::class);
     Route::resource('client', ClientController::class);
+    Route::get('clients/document/{id}', [ClientController::class, 'viewDocument'])->name('document');
     Route::get('client/status/{id}', [ClientController::class, 'changeStatus'])->name('change-status');
+    // Route::get('clients/document', [ClientDocumentController::class, 'index'])->name('client.doc');
     // For Client Applications
     Route::get('application', [ClientApplicationsController::class, 'index'])->name('admin.application');
     Route::get('application-seen-status/{id}', [ClientApplicationsController::class, 'changeApplicationSeenStatus'])->name('application.seen.status');
@@ -68,8 +71,8 @@ Route::middleware(['auth', 'is_client'])->prefix('user')->group(function () {
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-// Font-End Route
 
+// Font-End Route
 Route::get('/', [HomePageController::class, 'homepage'])->name('homepage');
 Route::get('/about', [HomePageController::class, 'about'])->name('about');
 Route::get('/contact', [HomePageController::class, 'contact'])->name('contact');
@@ -81,5 +84,4 @@ Route::get('/tender/international', [TenderPageController::class, 'international
 
 // For Testing purpose
 Route::get('/test', [TestController::class, 'index'])->name('test');
-
 Route::get('/search-tender', [TenderPageController::class, 'searchAction'])->name('search-tender');
