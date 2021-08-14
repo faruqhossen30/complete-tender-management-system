@@ -61,8 +61,10 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
 Route::middleware(['auth', 'is_client'])->prefix('user')->group(function () {
     Route::get('/', [UserHomeController::class, 'index']);
     Route::get('profile', [UserProfleController::class, 'profile'])->name('profile');
-    Route::get('profile/update', [UserProfleController::class, 'create'])->name('profile.update');
-    Route::post('profile/update', [UserProfleController::class, 'store'])->name('profile.store');
+    Route::get('profile/upload', [UserProfleController::class, 'create'])->name('profile.upload');
+    Route::post('profile/upload', [UserProfleController::class, 'store'])->name('profile.store');
+    Route::get('profile/edit/{id}', [UserProfleController::class, 'edit'])->name('profile.edit');
+    Route::post('profile/update/{id}', [UserProfleController::class, 'update'])->name('profile.update');
 
     Route::get('/apply', [ApplyUserController::class, 'index'])->name('apply');
     Route::post('/apply', [ApplyUserController::class, 'applyConfirm'])->name('apply.confirm');
