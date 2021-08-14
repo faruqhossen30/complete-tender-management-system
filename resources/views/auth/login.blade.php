@@ -12,18 +12,8 @@ CWL || Log in
         <div class="card-body">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-                
                 <div class="input-group mb-3">
-                    <input id="email" type="email" class="form-control" placeholder="Email"name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email"name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span ><i class="fas fa-envelope"></i></span>
@@ -36,12 +26,17 @@ CWL || Log in
                     @enderror
                 </div>
                 <div class="input-group mb-3">
-                    <input  id="password" type="password" class="form-control" placeholder="Password" name="password" required autocomplete="current-password">
+                    <input  id="password" type="password" class="form-control  @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="current-password">
                     <div class="input-group-append">
                         <div class="input-group-text">
                         <span class="fas fa-lock"></span>
                         </div>
                     </div>
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
                 <div class="row">
                 <div class="col-12">
