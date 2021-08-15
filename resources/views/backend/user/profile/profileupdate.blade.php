@@ -33,7 +33,6 @@
         <form action="{{route('profile.store')}}" method="POST" class="form-horizontal" enctype="multipart/form-data" >
                 @csrf
                 <div class="card-body">
-
                     <div class="form-group row">
                     <label for="logiFile" class="col-sm-2 col-form-label">Company Logo </label>
                     <div class="col-sm-10">

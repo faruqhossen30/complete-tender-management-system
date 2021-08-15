@@ -23,7 +23,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-        <form action="{{url('location/'.$editData->id)}}" method="POST" class="form-horizontal ">
+        <form action="{{route('location.update', $editData->id)}}" method="POST" class="form-horizontal ">
                 @csrf
                 @method('PUT')
                 <div class="row">

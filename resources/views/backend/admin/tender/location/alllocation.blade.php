@@ -68,11 +68,11 @@
                             <th scope="row">{{$place->id}}</th>
                             <td>{{$place->name}}</td>
                             <td>
-                                <a href="{{url('/location/'.$place->id.'/edit')}}" class="btn btn-warning btn-sm">Edit</a>
-                                <form action="{{url('location/'.$place->id)}}" method="post" style="display:inline-block">
+                                <a href="{{route('location.edit', $place->id)}}" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="{{route('location.destroy', $place->id)}}" method="post" style="display:inline-block">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" onclick="confirm('Sure ? Want to delete Tender ?')" class="btn btn-danger btn-sm">Delete</button>
+                                    <button type="submit" onclick="confirm('Sure ? Want to delete location ?')" class="btn btn-danger btn-sm">Delete</button>
                                 </form>
                             </td>
                             </tr>

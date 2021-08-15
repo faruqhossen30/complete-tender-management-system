@@ -23,7 +23,8 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-        <form action="{{url('country/'.$countrydata->id)}}" method="POST" class="form-horizontal ">
+        {{-- <form action="{{url('country/'.$countrydata->id)}}" method="POST" class="form-horizontal "> --}}
+        <form action="{{route('country.update', $countrydata->id)}}" method="POST" class="form-horizontal ">
                 @csrf
                 @method('PUT')
                 <div class="row">

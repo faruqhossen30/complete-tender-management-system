@@ -33,7 +33,7 @@
         <form action="{{route('profile.update', $document->user_id)}}" method="POST" class="form-horizontal" enctype="multipart/form-data" >
                 @csrf
                 <div class="card-body">
-
+                    <input type="hidden" name="old_logo" value="{{$document->logo}}">
                     <div class="form-group row">
                     <label for="logiFile" class="col-sm-2 col-form-label">Company Logo </label>
                     <div class="col-sm-10">

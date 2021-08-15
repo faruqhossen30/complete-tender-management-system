@@ -54,7 +54,7 @@
                     </form>
 
                     <hr>
-                <table class="table table-bordered">
+                <table class="table table-bordered" id="myTable">
                     <thead>
                       <tr>
                         <th scope="col">S.N</th>
@@ -63,16 +63,19 @@
                       </tr>
                     </thead>
                     <tbody>
+                        @php
+                            $serial = 1;
+                        @endphp
                         @foreach ($departments as $place)
                         <tr>
-                            <th scope="row">{{$place->id}}</th>
+                            <th scope="row">{{$serial++}}</th>
                             <td>{{$place->name}}</td>
                             <td>
-                                <a href="{{url('/department/'.$place->id.'/edit')}}" class="btn btn-warning btn-sm">Edit</a>
-                                <form action="{{url('department/'.$place->id)}}" method="post" style="display:inline-block">
+                                <a href="{{route('department.edit', $place->id)}}" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="{{route('department.destroy', $place->id)}}" method="post" style="display:inline-block">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" onclick="confirm('Sure ? Want to delete Tender ?')" class="btn btn-danger btn-sm">Delete</button>
+                                    <button type="submit" onclick="confirm('Sure ? Want to delete department ?')" class="btn btn-danger btn-sm">Delete</button>
                                 </form>
                             </td>
                             </tr>
@@ -85,7 +88,7 @@
 </div>
 @endsection
 @push('css')
-<link rel="stylesheet" href="{{asset('css/jquery.dataTables.min.css')}}">
+<link rel="stylesheet" href="{{asset('public/css/jquery.dataTables.min.css')}}">
     <style>
         .dataTables_length {
             padding: 10px;
@@ -99,7 +102,7 @@
     </style>
 @endpush
 @push('js')
-    <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('public/js/jquery.dataTables.min.js')}}"></script>
     <script>
         $(document).ready( function () {
             $('#myTable').DataTable();

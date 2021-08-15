@@ -54,13 +54,17 @@
                       </tr>
                     </thead>
                     <tbody>
+                        @php
+                            $serial = 1;
+                        @endphp
+
                         @foreach ($countries as $country)
                         <tr>
-                            <th scope="row">{{$country->id}}</th>
+                            <th scope="row">{{$serial++}}</th>
                             <td>{{$country->name}}</td>
                             <td>
-                                <a href="{{url('/country/'.$country->id.'/edit')}}" class="btn btn-warning btn-sm">Edit</a>
-                                <form action="{{url('country/'.$country->id)}}" method="post" style="display:inline-block">
+                                <a href="{{route('country.edit', $country->id)}}" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="{{route('country.destroy', $country->id)}}" method="post" style="display:inline-block">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" onclick="confirm('Sure ? Want to delete Tender ?')" class="btn btn-danger btn-sm">Delete</button>

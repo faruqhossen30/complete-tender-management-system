@@ -78,7 +78,7 @@ class LocationController extends Controller
     public function update(Request $request, $id)
     {
         $update = Location::where('id', $id)->update(['name'=>$request->location]);
-        return redirect('location')->with('success', 'Location has been Updated !');
+        return redirect(route('location.index'))->with('success', 'Location has been Updated !');
     }
 
     /**
@@ -90,6 +90,6 @@ class LocationController extends Controller
     public function destroy($id)
     {
         $delete = Location::where('id', $id)->delete();
-        return redirect('location')->with('success', 'Location has been Updated !');
+        return redirect(route('location.index'))->with('success', 'Location has been Updated !');
     }
 }
