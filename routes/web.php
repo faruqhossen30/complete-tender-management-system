@@ -59,7 +59,7 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
 
 
 // For User Route
-Route::middleware(['auth', 'is_client'])->prefix('user')->group(function () {
+Route::middleware(['auth', 'is_client', 'verified'])->prefix('user')->group(function () {
     Route::get('/', [UserHomeController::class, 'index']);
     Route::get('profile', [UserProfleController::class, 'profile'])->name('profile');
     Route::get('profile/upload', [UserProfleController::class, 'create'])->name('profile.upload');
