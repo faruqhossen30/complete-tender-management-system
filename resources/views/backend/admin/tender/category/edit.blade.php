@@ -23,7 +23,7 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body">
-        <form action="{{url('category/'.$category->id)}}" method="POST" class="form-horizontal ">
+        <form action="{{route('category.update', $category->id)}}" method="POST" class="form-horizontal ">
                 @csrf
                 @method('PUT')
                 <div class="row">

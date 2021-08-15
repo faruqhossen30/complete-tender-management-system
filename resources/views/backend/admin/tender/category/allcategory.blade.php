@@ -63,13 +63,16 @@
                       </tr>
                     </thead>
                     <tbody>
+                        @php
+                            $serial = 1;
+                        @endphp
                         @foreach ($categories as $place)
                         <tr>
-                            <th scope="row">{{$place->id}}</th>
+                            <th scope="row">{{$serial++}}</th>
                             <td>{{$place->name}}</td>
                             <td>
-                                <a href="{{url('/category/'.$place->id.'/edit')}}" class="btn btn-warning btn-sm">Edit</a>
-                                <form action="{{url('category/'.$place->id)}}" method="post" style="display:inline-block">
+                                <a href="{{route('category.edit', $place->id)}}" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="{{route('category.destroy', $place->id)}}" method="post" style="display:inline-block">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" onclick="confirm('Sure ? Want to delete Tender ?')" class="btn btn-danger btn-sm">Delete</button>

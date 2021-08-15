@@ -78,8 +78,8 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $update = Category::where('id', $id)->update(['name'=>$request->category]);
-        return redirect('category');
-        // return $request->all();
+        return redirect(route('category.index'))->with('success', 'Catagory has been updeed !');
+
     }
 
     /**
@@ -91,6 +91,6 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $delete = Category::where('id', $id)->delete();
-        return redirect('category')->with('success', 'Category has been delete !');
+        return redirect(route('category.index'))->with('success', 'Category has been delete !');
     }
 }

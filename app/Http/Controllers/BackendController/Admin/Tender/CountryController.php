@@ -78,7 +78,7 @@ class CountryController extends Controller
     public function update(Request $request, $id)
     {
         $update = Country::where('id', $id)->update(['name'=>$request->name]);
-        return redirect('country');
+        return redirect()->route('country.index');
 
     }
 
@@ -92,6 +92,6 @@ class CountryController extends Controller
     {
         $deleteCountry = Country::where('id', $id)->delete();
 
-        return redirect('country');
+        return redirect()->route('country.index')->with('success', 'Country has been deleted !');
     }
 }
