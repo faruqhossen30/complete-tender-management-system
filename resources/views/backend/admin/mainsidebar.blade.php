@@ -63,13 +63,13 @@
 
            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link active">
+                <a href="{{route('place.create')}}" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Create place</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('travelback')}}" class="nav-link">
+                <a href="{{route('place.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Manage place</p>
                 </a>
