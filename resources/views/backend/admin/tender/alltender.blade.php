@@ -46,14 +46,21 @@
                         </tr>
                         </thead>
                         <tbody>
+                            @php
+                                $serial = 1;
+                            @endphp
                         @foreach ($tenders as $tender)
                         <tr>
-                            <td>{{$tender->id}}</td>
+                            <td>{{$serial++}}</td>
                             <td>{{$tender->tenderID}}</td>
-                            <td>{{substr($tender->description,0,45)}} ...</td>
+                            <td>{{Str::words($tender->description,3)}}</td>
                             <td>{{$tender->tenderAuthor->name ?? 'N/A'}}</td>
-                            <td>{{$tender->created_at}}</td>
-                            <td>{{$tender->lastDate}}</td>
+                            <td>{{ Carbon\Carbon::parse($tender->created_at)->format('d M Y'); }}</td>
+                            <td>
+                                @if (Carbon\Carbon::parse($tender->lastDate)->format('d M Y')!='30 Nov -0001')
+                                {{Carbon\Carbon::parse($tender->lastDate)->format('d M Y')}}
+                                @endif
+                            </td>
                             <td>
                             <a href="{{url('admin/tender/'.$tender->id)}}" class="btn btn-success btn-sm">View</a>
                                 <a href="{{url('admin/tender/'.$tender->id.'/edit')}}" class="btn btn-warning btn-sm">Edit</a>

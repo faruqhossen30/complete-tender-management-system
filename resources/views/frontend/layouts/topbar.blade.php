@@ -4,7 +4,7 @@
             <div class="col-md-6 cwl-info">
                 <p class="mt-1 mb-1"
                     <span> <i class="fa fa-envelope" aria-hidden="true"></i></span> info@catalystswings.com                    |
-                    <span><i class="fa fa-phone" aria-hidden="true"></i></span> 01788950905
+                    <span><i class="fa fa-phone" aria-hidden="true"></i></span> +8801788950905
                 </p>
             </div>
             <div class="col-md-6 cwl-social">

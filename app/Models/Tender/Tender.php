@@ -32,6 +32,8 @@ class Tender extends Model
         'user_id'
     ];
 
+    protected $dates = ['lastDate'];
+
     public function tenderAuthor(Type $var = null)
     {
         return $this->hasOne(User::class, 'id', 'user_id');
