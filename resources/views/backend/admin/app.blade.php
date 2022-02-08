@@ -10,12 +10,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>catalystswings</title>
-
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{asset('public/plugins/fontawesome-free/css/all.min.css')}}">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
   <!-- Theme style -->
-  <link rel="stylesheet" href="{{asset('public/css/adminlte.min.css')}}">
   @stack('css')
+  <link rel="stylesheet" href="{{asset('public/css/adminlte.min.css')}}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 <!--icon -->
@@ -65,8 +68,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('public/js/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('public/js/bootstrap.bundle.min.js')}}"></script>
-@stack('js')
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <!-- AdminLTE App -->
+<script src="{{asset('public/js/bs-custom-file-input.min.js')}}"></script>
 <script src="{{asset('public/js/adminlte.min.js')}}"></script>
+<script src="{{asset('public/js/demo.js')}}"></script>
+@stack('js')
 </body>
 </html>

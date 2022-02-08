@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 // Controlles for Fond-end
 
 // Controlles for Admin
+use App\Http\Controllers\BackendController\Admin\place\PlaceController;
 use App\Http\Controllers\BackendController\Admin\AdminHomeController; //ok
 use App\Http\Controllers\BackendController\Admin\Client\ClientController;
 use App\Http\Controllers\BackendController\Admin\Tender\TenderController; //ok
@@ -14,6 +15,7 @@ use App\Http\Controllers\BackendController\Admin\Tender\TypeController; // ok
 use App\Http\Controllers\BackendController\Admin\Tender\DepartmentController; // ok
 use App\Http\Controllers\BackendController\User\UserHomeController;
 use App\Http\Controllers\BackendController\Admin\Client\ClientDocumentController;
+
 // Client Applictions
 use App\Http\Controllers\BackendController\Admin\Tender\Application\ClientApplicationsController;
 
@@ -26,6 +28,8 @@ use App\Http\Controllers\FrontEndController\TenderPageController;
 // Controlles for Client dashboard
 use App\Http\Controllers\UserProfleController;
 use App\Http\Controllers\BackendController\User\AppliedTenderController;
+use App\Http\Controllers\FrontEndController\PlaceFontEndController;
+use App\Http\Controllers\FrontEndController\SinglePageController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Auth;
@@ -45,6 +49,7 @@ Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
     Route::resource('type', TypeController::class);
     Route::resource('department', DepartmentController::class);
     Route::resource('client', ClientController::class);
+    Route::resource('place', PlaceController::class);
     Route::get('clients/document/{id}', [ClientController::class, 'viewDocument'])->name('document');
     Route::get('client/status/{id}', [ClientController::class, 'changeStatus'])->name('change-status');
     // Route::get('clients/document', [ClientDocumentController::class, 'index'])->name('client.doc');
@@ -84,7 +89,8 @@ Route::get('/search', [SearchController::class, 'index'])->name('search');
 Route::get('/tender/all', [TenderPageController::class, 'allTender'])->name('tender.all');
 Route::get('/tender/national', [TenderPageController::class, 'national'])->name('tender.national');
 Route::get('/tender/international', [TenderPageController::class, 'international'])->name('tender.international');
-
+Route::get('place', [PlaceFontEndController::class,'allPlace'])->name('place');
+Route::get('single', [SinglePageController::class,'singlePase'])->name('single');
 // For Testing purpose
 Route::get('/test', [TestController::class, 'index'])->name('test');
 Route::get('/search-tender', [TenderPageController::class, 'searchAction'])->name('search-tender');
