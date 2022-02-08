@@ -28,6 +28,9 @@
                       <a class="nav-link {{ request()->routeIs('about') ? 'cwl-active' : '' }}" href="{{route('about')}}">About US</a>
                     </li>
                     <li class="nav-item">
+                      <a class="nav-link {{ request()->routeIs('place') ? 'cwl-active' : '' }}" href="{{route('place')}}">Tourism</a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link {{ request()->routeIs('contact') ? 'cwl-active' : '' }}" href="{{route('contact')}}">Contact Us</a>
                     </li>
 

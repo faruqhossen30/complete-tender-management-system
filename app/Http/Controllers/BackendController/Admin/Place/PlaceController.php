@@ -8,6 +8,7 @@ use App\Models\PlaceImage;
 use App\Models\Tender\Location;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class PlaceController extends Controller
 {
@@ -88,6 +89,7 @@ class PlaceController extends Controller
 
             $place = Place::create([
                 'title'        => $request->title,
+                'slug'         => SlugService::createSlug(Place::class, 'slug', $request->title),
                 'content'      => $request->content,
                 'address'      => $request->address,
                 'google_map'   => $request->google_map,
@@ -176,6 +178,7 @@ class PlaceController extends Controller
 
             Place::where('id', $id)->update([
                 'title'       => $request->title,
+                'slug'        => SlugService::createSlug(Place::class, 'slug', $request->title),
                 'content'     => $request->content,
                 'address'     => $request->address,
                 'google_map'  => $request->google_map,
