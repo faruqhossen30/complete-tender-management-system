@@ -27,7 +27,7 @@
                                 @csrf
                                 @method('put')
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Title</label>
+                                    <label for="exampleInputEmail1">Title <span class="text-danger">*</span></label>
                                     <input name="title" type="text" class="form-control @error('title')is-invalid @enderror"
                                         id="exampleInputEmail1" value="{{ $place->title }}">
                                     @error('title')
@@ -37,10 +37,10 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label>Desription</label>
+                                    <label>Desription <span class="text-danger">*</span></label>
                                     <textarea id="summernote" name="content" type="text"
-                                        class="form-control @error('content')is-invalid @enderror" rows="3"
-                                        >{{ $place->content }}</textarea>
+                                        class="form-control @error('content')is-invalid @enderror"
+                                        rows="3">{{ $place->content }}</textarea>
                                     @error('content')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -48,7 +48,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Location</label>
+                                    <label for="exampleInputPassword1">Address<span class="text-danger">*</span></label>
                                     <input name="address" type="text"
                                         class="form-control @error('address')is-invalid @enderror"
                                         id="exampleInputPassword1" value="{{ $place->address }}">
@@ -71,69 +71,36 @@
 
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="exampleSelectRounded0">Division</label>
-                                            <select name="division_id"
-                                                class="form-control custom-select rounded-5  @error('division_id')is-invalid @enderror"
+                                            <label for="exampleSelectRounded0">Location<span class="text-danger">*</span></label>
+                                            <select name="location_id"
+                                                class="form-control custom-select rounded-5  @error('location_id')is-invalid @enderror"
                                                 id="exampleSelectRounded0" value="Enter your location">
                                                 <option value=""> Select Division Id </option>
-                                                <option value="1">division_id</option>
-                                                <option value="2">district_id</option>
-                                                <option value="3">upazila_id</option>
+                                                @foreach ($locations as $location)
+                                                    <option value="{{ $location->id }}" @if ($location->id == $place->location_id) selected @endif>
+                                                        {{ $location->name }}</option>
+                                                @endforeach
+
                                             </select>
-                                            @error('division_id')
+                                            @error('location_id')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="exampleSelectRounded0">District</label>
-                                            <select name="district_id"
-                                                class="form-control custom-select rounded-5 @error('district_id')is-invalid @enderror"
-                                                id="exampleSelectRounded0">
-                                                <option value=""> Select District Id </option>
-                                                <option value="1">division_id</option>
-                                                <option value="2">district_id</option>
-                                                <option value="3">upazila_id</option>
-                                            </select>
-                                            @error('district_id')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="exampleSelectRounded0">Upazila</label>
-                                            <select name="upazila_id"
-                                                class="form-control custom-select rounded-5 @error('district_id')is-invalid @enderror"
-                                                id="exampleSelectRounded0">
-                                                <option value=""> Select Upazila Id </option>
-                                                <option value="1">division_id</option>
-                                                <option value="2">district_id</option>
-                                                <option value="3">upazila_id</option>
-                                            </select>
-                                            @error('upazila_id')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
+
                                 </div>
 
                                 <div class="form-group">
                                     <div class="form-group">
                                         <label> Video Link </label>
-                                        <input type="url" name="video"
-                                            class="form-control  @error('video')is-invalid @enderror"
+                                        <input type="url" name="video_link"
+                                            class="form-control  @error('video_link')is-invalid @enderror"
                                             value="{{ $place->video_link }}">
-                                        @error('video')
+                                        @error('video_link')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
                                             </div>
@@ -141,7 +108,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="form-group">
-                                            <label> Image </label>
+                                            <label> Image <span class="text-danger">*</span></label>
                                             <input type="file" name="image"
                                                 class="form-control  @error('image')is-invalid @enderror">
                                             @error('image')
@@ -149,18 +116,29 @@
                                                     {{ $message }}
                                                 </div>
                                             @enderror
-                                            <img class="img-thumbnail" style="width: 100px; height:100px; padding:5px" src="{{asset('public/uploads/place/'.$place->image)}}" alt="sdfsdf">
+                                            <img class="img-thumbnail" style="width: 100px; height:100px; padding:5px"
+                                                src="{{ asset('public/uploads/place/' . $place->image) }}" alt="sdfsdf">
                                         </div>
 
                                         <div class="form-group">
                                             <label> Slider Image </label>
-                                            <input type="file" name="slider_image"
-                                                class="form-control  @error('image')is-invalid @enderror">
-                                            @error('image')
+                                            <input type="file" name="slider_image[]"
+                                                class="form-control  @error('slider_image')is-invalid @enderror" multiple>
+                                            @error('slider_image')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
                                             @enderror
+                                            <div class="item image active">
+                                                @foreach ($place_image as $image)
+
+                                                    <!-- slider images -->
+                                                    <img src="{{ asset('public/uploads/placeimages/' . $image->name) }}"
+                                                         alt="{{ $image->name }}" title="Image Slideshow" style="width: 100px; padding:5px">
+
+                                                    <!-- slider images -->
+                                                @endforeach
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="card-footer">
@@ -171,36 +149,39 @@
                     @endsection
 
                     @push('css')
-                    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-                        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-                        @endpush
+                        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+                                                integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+                                                crossorigin="anonymous"></script>
+                        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css"
+                            rel="stylesheet">
+                    @endpush
 
-                        @push('js')
+                    @push('js')
                         <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-                    <script>
-                        $(function () {
-                          // Summernote
-                          $('#summernote').summernote({
-                            placeholder: 'Describe your place in details.',
-                            tabsize: 2,
-                            height: 300,
-                            toolbar: [
-                              ['style', ['style']],
-                              ['font', ['bold', 'underline', 'clear']],
-                              ['color', ['color']],
-                              ['para', ['ul', 'ol', 'paragraph']],
-                              ['table', ['table']],
-                              ['insert', ['link', 'picture', 'video']],
-                              ['view', ['fullscreen', 'codeview', 'help']]
-                            ]
-                          })
+                        <script>
+                            $(function() {
+                                // Summernote
+                                $('#summernote').summernote({
+                                    placeholder: 'Describe your place in details.',
+                                    tabsize: 2,
+                                    height: 300,
+                                    toolbar: [
+                                        ['style', ['style']],
+                                        ['font', ['bold', 'underline', 'clear']],
+                                        ['color', ['color']],
+                                        ['para', ['ul', 'ol', 'paragraph']],
+                                        ['table', ['table']],
+                                        ['insert', ['link', 'picture', 'video']],
+                                        ['view', ['fullscreen', 'codeview', 'help']]
+                                    ]
+                                })
 
-                          // CodeMirror
-                          CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
-                            mode: "htmlmixed",
-                            theme: "monokai"
-                          });
-                        })
-                      </script>
+                                // CodeMirror
+                                CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                                    mode: "htmlmixed",
+                                    theme: "monokai"
+                                });
+                            })
+                        </script>
 
                     @endpush

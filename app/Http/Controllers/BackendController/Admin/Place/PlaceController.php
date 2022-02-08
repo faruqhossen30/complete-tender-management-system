@@ -4,7 +4,10 @@ namespace App\Http\Controllers\BackendController\Admin\Place;
 
 use App\Http\Controllers\Controller;
 use App\Models\Place;
+use App\Models\PlaceImage;
+use App\Models\Tender\Location;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PlaceController extends Controller
 {
@@ -16,10 +19,10 @@ class PlaceController extends Controller
     public function index()
 
     {
-        $places = Place::get();
-        // return $place;
-         return view('backend.admin.place.placetable',compact('places'));
-
+        $places = Place::with('location','author')->latest()->get();
+        // $places = Place::get();
+        // return $places;
+        return view('backend.admin.place.placetable', compact('places'));
     }
 
     /**
@@ -29,7 +32,8 @@ class PlaceController extends Controller
      */
     public function create()
     {
-        return view('backend.admin.place.addplace');
+        $locations = Location::all();
+        return view('backend.admin.place.addplace', compact('locations'));
     }
 
     /**
@@ -39,44 +43,74 @@ class PlaceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-     {
+    {
         //  return $request->all();
-         $request->validate([
+        $request->validate([
             'title'       => 'required',
             'content'     => 'required',
             'address'     => 'required',
             'image'       => 'required',
+            'location_id' => 'required',
 
-         ],[
-              'title.required'       => 'please enter your title',
-              'content.required'     => 'please enter your content',
-              'address.required'     => 'please enter your address',
-              'image.required'       => 'please enter your image'
-         ]);
 
-         $image = $request->file('image');
+        ], [
+            'title.required'        => 'please enter your title',
+            'content.required'      => 'please enter your content',
+            'address.required'      => 'please enter your address',
+            'image.required'        => 'please enter your image',
+            'location_id.required'        => 'please enter your image',
+        ]);
 
-         if($image){
+        $image = $request->file('image');
+
+        $images = [];
+        $i = 0;
+        $sliderimage = $request->file('slider_image');
+
+        if ($sliderimage) {
+            foreach ($request->file('slider_image') as $simage) {
+
+                $fileExtention = $image->getClientOriginalExtension();
+                $fileName = hexdec(uniqid()) . '.' . $fileExtention;
+                $simage->move('public/uploads/placeimages', $fileName);
+
+                $images[] = $fileName;
+                $i++;
+            };
+        }
+
+        if ($image) {
             // For Create Database Name
             $extention =  $image->getClientOriginalExtension();
-            $imageName = time().'.'.$extention;
+            $imageName = time() . '.' . $extention;
             //  For Saving upload folder
             $image->move('public/uploads/place/', $imageName);
 
-            Place::create([
-                'title'       => $request->title,
-                'content'     => $request->content,
-                'address'     => $request->address,
-                'google_map'  => $request->google_map,
-                'image'       => $imageName,
-                'video_link'  => $request->video_link,
-                'division_id' => $request->division_id,
-                'district_id' => $request->district_id,
-                'upazila_id'  => $request->upazila_id,
+            $place = Place::create([
+                'title'        => $request->title,
+                'content'      => $request->content,
+                'address'      => $request->address,
+                'google_map'   => $request->google_map,
+                'image'        => $imageName,
+                'author_id'    => Auth::user()->id,
+                'video_link'   => $request->video_link,
+                'location_id'  => $request->location_id,
+                'slider_image' => $request->slider_image,
+
             ]);
-         }
-         return redirect()->route('place.index')->with('success','successfully data added');
-     }
+
+            if ($place && !empty($images)) {
+                foreach ($images as $image) {
+                    PlaceImage::create([
+                        'place_id' => $place->id,
+                        'name' => $image
+                    ]);
+                };
+            }
+        }
+
+        return redirect()->route('place.index')->with('success', 'successfully data added');
+    }
 
     /**
      * Display the specified resource.
@@ -89,8 +123,7 @@ class PlaceController extends Controller
         // return "ok";
         $place = Place::Where('id', $id)->first();
         // return $place;
-        return view('backend.admin.place.view_place',compact('place'));
-
+        return view('backend.admin.place.view_place', compact('place'));
     }
 
     /**
@@ -101,10 +134,10 @@ class PlaceController extends Controller
      */
     public function edit($id)
     {
+        $locations = Location::all();
         $place = Place::findOrFail($id);
-        // return $place;
-        return  view('backend.admin.place.edit_place',compact('place'));
-
+        $place_image = PlaceImage::where('place_id', $id)->get();
+        return  view('backend.admin.place.edit_place', compact('place', 'locations', 'place_image'));
     }
 
     /**
@@ -118,38 +151,90 @@ class PlaceController extends Controller
     {
         $image = $request->file('image');
 
-        if($image){
+        $images = [];
+        $i = 0;
+        $sliderimage = $request->file('slider_image');
+
+        if ($sliderimage) {
+            foreach ($request->file('slider_image') as $simage) {
+
+                $fileExtention = $simage->getClientOriginalExtension();
+                $fileName = hexdec(uniqid()) . '.' . $fileExtention;
+                $simage->move('public/uploads/placeimages', $fileName);
+
+                $images[] = $fileName;
+                $i++;
+            };
+        };
+
+        if ($image) {
             // For Create Database Name
             $extention =  $image->getClientOriginalExtension();
-            $imageName = time().'.'.$extention;
+            $imageName = time() . '.' . $extention;
             //  For Saving upload folder
             $image->move('public/uploads/place/', $imageName);
 
-        Place::findOrFail($id)->update([
-            'title'       => $request->title,
-            'content'     => $request->content,
-            'address'     => $request->address,
-            'google_map'  => $request->google_map,
-            'image'       => $imageName,
-            'video_link'  => $request->video_link,
-            'division_id' => $request->division_id,
-            'district_id' => $request->district_id,
-            'upazila_id'  => $request->upazila_id,
-        ]);
-    } else{
-        Place::findOrFail($id)->update([
-            'title'       => $request->title,
-            'content'     => $request->content,
-            'address'     => $request->address,
-            'google_map'  => $request->google_map,
-            'video_link'  => $request->video_link,
-            'division_id' => $request->division_id,
-            'district_id' => $request->district_id,
-            'upazila_id'  => $request->upazila_id,
-        ]);
+            Place::where('id', $id)->update([
+                'title'       => $request->title,
+                'content'     => $request->content,
+                'address'     => $request->address,
+                'google_map'  => $request->google_map,
+                'image'       => $imageName,
+                'video_link'  => $request->video_link,
+                'location_id' => $request->location_id,
+            ]);
 
-    }
-    return redirect()->route('place.index')->with('success','Successfully data update');
+            if (!empty($images)) {
+                $oldimage = PlaceImage::where('place_id', $id)->get();
+
+                if($oldimage){
+                    foreach($oldimage as $old){
+                        unlink('public/uploads/placeimages/'.$old->name);
+                    }
+                }
+                PlaceImage::where('place_id', $id)->delete();
+
+                foreach ($images as $image) {
+                    PlaceImage::create([
+                        'place_id' => $id,
+                        'name' => $image
+                    ]);
+                };
+            }
+
+        } else {
+
+            Place::where('id', $id)->update([
+
+                'title'       => $request->title,
+                'content'     => $request->content,
+                'address'     => $request->address,
+                'google_map'  => $request->google_map,
+                'video_link'  => $request->video_link,
+                'location_id' => $request->location_id,
+            ]);
+
+            if (!empty($images)) {
+                $oldimage = PlaceImage::where('place_id', $id)->get();
+
+                if($oldimage){
+                    foreach($oldimage as $old){
+                        unlink('public/uploads/placeimages/'.$old->name);
+                    }
+                }
+                PlaceImage::where('place_id', $id)->delete();
+
+                foreach ($images as $image) {
+                    PlaceImage::create([
+                        'place_id' => $id,
+                        'name' => $image
+                    ]);
+                };
+            }
+
+        }
+
+        return redirect()->route('place.index')->with('success', 'Successfully data update');
     }
 
     /**
@@ -161,6 +246,6 @@ class PlaceController extends Controller
     public function destroy($id)
     {
         Place::findOrFail($id)->delete();
-        return redirect()->route('place.index')->with('delete','successfully data delete');
+        return redirect()->route('place.index')->with('delete', 'successfully data delete');
     }
 }

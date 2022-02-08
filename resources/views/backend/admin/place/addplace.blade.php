@@ -25,9 +25,9 @@
                             <form action="{{ route('place.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Title</label>
+                                    <label for="exampleInputEmail1">Title<span class="text-danger">*</span></label>
                                     <input name="title" type="text" class="form-control @error('title')is-invalid @enderror"
-                                        id="exampleInputEmail1" placeholder="Enter your title">
+                                        id="exampleInputEmail1" placeholder="Enter your title" value="{{ old('title') }}">
                                     @error('title')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -35,10 +35,10 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label>Desription</label>
+                                    <label>Desription<span class="text-danger">*</span></label>
                                     <textarea id="summernote" name="content" type="text"
                                         class="form-control @error('content')is-invalid @enderror" rows="3"
-                                        placeholder="Enter location details" ></textarea>
+                                        placeholder="Enter location details">{{ old('content') }}</textarea>
                                     @error('content')
                                         <div class="invalid-feedback">
                                             {{ $message }}
@@ -46,90 +46,56 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">Location</label>
+                                    <label for="exampleInputPassword1">Address<span class="text-danger">*</span></label>
                                     <input name="address" type="text"
                                         class="form-control @error('address')is-invalid @enderror"
-                                        id="exampleInputPassword1" placeholder="Enter your location">
+                                        id="exampleInputPassword1" placeholder="Enter your location" value="{{ old('address') }}">
                                     @error('address')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Google map</label>
-                                    <input name="google_map" type="text"
-                                        class="form-control @error('google_map')is-invalid @enderror"
-                                        id="exampleInputPassword1" placeholder="Enter your location">
-                                    @error('google_map')
-                                        <div class="invalid-feedback">
-                                            {{ $message }}
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="exampleSelectRounded0">Location<span class="text-danger">*</span></label>
+                                            <select name="location_id"
+                                                class="form-control custom-select rounded-5  @error('location_id')is-invalid @enderror"
+                                                id="exampleSelectRounded0">
+                                                <option value=""> Select place </option>
+                                             @foreach ($locations as $location)
+                                                <option value="{{ $location->id }}" @if(old('location_id') == $location->id) selected  @endif >{{ $location->name }}</option>
+                                             @endforeach
+                                            </select>
+                                            @error('location_id')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
                                         </div>
-                                    @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Google map</label>
+                                        <input name="google_map" type="text"
+                                            class="form-control @error('google_map')is-invalid @enderror"
+                                            id="exampleInputPassword1" placeholder="Enter your location" value="{{ old('google_map') }}">
+                                        @error('google_map')
+                                            <div class="invalid-feedback">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+
+                                    </div>
 
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="exampleSelectRounded0">Division</label>
-                                            <select name="division_id"
-                                                class="form-control custom-select rounded-5  @error('division_id')is-invalid @enderror"
-                                                id="exampleSelectRounded0">
-                                                <option value=""> Select Division Id </option>
-                                                <option value="1">division_id</option>
-                                                <option value="2">district_id</option>
-                                                <option value="3">upazila_id</option>
-                                            </select>
-                                            @error('division_id')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="exampleSelectRounded0">District</label>
-                                            <select name="district_id"
-                                                class="form-control custom-select rounded-5 @error('district_id')is-invalid @enderror"
-                                                id="exampleSelectRounded0">
-                                                <option value=""> Select District Id </option>
-                                                <option value="1">division_id</option>
-                                                <option value="2">district_id</option>
-                                                <option value="3">upazila_id</option>
-                                            </select>
-                                            @error('district_id')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <label for="exampleSelectRounded0">Upazila</label>
-                                            <select name="upazila_id"
-                                                class="form-control custom-select rounded-5 @error('district_id')is-invalid @enderror"
-                                                id="exampleSelectRounded0">
-                                                <option value=""> Select Upazila Id </option>
-                                                <option value="1">division_id</option>
-                                                <option value="2">district_id</option>
-                                                <option value="3">upazila_id</option>
-                                            </select>
-                                            @error('upazila_id')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                               
+
                                 <div class="form-group">
                                     <div class="form-group">
                                         <label> Video Link </label>
-                                        <input type="url" name="video_link" class="form-control  @error('video')is-invalid @enderror">
-                                            @error('video')
+                                        <input type="url" name="video_link" class="form-control  @error('video_link')is-invalid @enderror" value="{{ old('video_link') }}">
+                                            @error('video_link')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -139,8 +105,8 @@
 
                                 <div class="form-group">
                                     <div class="form-group">
-                                        <label> Image </label>
-                                        <input type="file" name="image" class="form-control  @error('image')is-invalid @enderror">
+                                        <label> Image <span class="text-danger">*</span></label>
+                                        <input type="file" name="image" class="form-control  @error('image')is-invalid @enderror" value="{{ old('image') }}">
                                             @error('image')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -150,14 +116,10 @@
 
                                     <div class="form-group">
                                         <label> Slider Image  </label>
-                                        <input type="file" name="slider_image" class="form-control  @error('image')is-invalid @enderror">
-                                        @error('image')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
+                                        <input type="file" name="slider_image[]" class="form-control  " multiple value="{{ old('slider_image') }}">
 
                                     </div>
+
 
                                 </div>
                                 <div class="card-footer">

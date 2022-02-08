@@ -38,9 +38,8 @@
                             <th>S.N</th>
                             <th>title</th>
                             <th>image</th>
-                            <th>division_id</th>
-                            <th>district_id</th>
-                            <th>upazila_id</th>
+                            <th>location</th>
+                            <th>Author</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -53,9 +52,9 @@
                                     <td>
                                     <img src = "{{asset('/public/uploads/place/'.$place->image)}}" width="50px" height="50px" alt="image">
                                 </td>
-                                <td>{{ $place->division_id }}</td>
-                                <td>{{ $place->district_id }}</td>
-                                <td>{{ $place->upazila_id }}</td>
+                                <td>{{ $place->location->name }}</td>
+                                <td>{{ $place->author->name ?? '' }}</td>
+
 
                                 <td>
                                     <div class="d-flex justify-content-start">

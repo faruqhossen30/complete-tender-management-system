@@ -16,14 +16,13 @@ class CreatePlacesTable extends Migration
         Schema::create('places', function (Blueprint $table) {
             $table->id();
             $table->string('title',1000);
+            $table->unsignedBigInteger('author_id');
             $table->longText('content');
             $table->string('address',1000);
             $table->string('google_map',500);
             $table->string('image');
             $table->string('video_link');
-            $table->unsignedBigInteger('division_id');
-            $table->unsignedBigInteger('district_id');
-            $table->unsignedBigInteger('upazila_id');
+            $table->unsignedBigInteger('location_id');
             $table->timestamps();
         });
     }
