@@ -42,7 +42,10 @@
                         <td>{{$tender->userInfo->name}}</td>
                         <td>{{$tender->tenderInfo->tenderID}}</td>
                         <td>{{ Str::substr($tender->tenderInfo->description, 0, 40)}}...</td>
-                        <td>{{ Carbon\Carbon::parse($tender->apply_time)->diffForHumans() }}</td>
+                        <td>
+                            <strong>{{ Carbon\Carbon::parse($tender->apply_time)->format('d M y') }}</strong>
+                            <p class="text-sm text-muted m-0"><i class="far fa-clock mr-1"></i>{{ Carbon\Carbon::parse($tender->apply_time)->diffForHumans() }}</p>
+                        </td>
                         <td>
                         <a href="{{ route('application.show',$tender->id)}}" class="btn btn-primary btn-sm" title="click for show details">View</a>
                         @if ("1" == $tender->seen)

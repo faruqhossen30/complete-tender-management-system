@@ -41,7 +41,7 @@ Auth::routes(['verify' => true]);
 // For Admin route
 
 Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
-    Route::get('/', [AdminHomeController::class, 'index']);
+    Route::get('/', [AdminHomeController::class, 'index'])->name('admin.dashboard');
     Route::resource('tender', TenderController::class);
     Route::resource('country', CountryController::class);
     Route::resource('location', LocationController::class);
