@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 // Controlles for Fond-end
 
 // Controlles for Admin
-use App\Http\Controllers\BackendController\Admin\place\PlaceController;
+use App\Http\Controllers\BackendController\Admin\Place\PlaceController;
 use App\Http\Controllers\BackendController\Admin\AdminHomeController; //ok
 use App\Http\Controllers\BackendController\Admin\Client\ClientController;
 use App\Http\Controllers\BackendController\Admin\Tender\TenderController; //ok
