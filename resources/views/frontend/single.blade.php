@@ -13,7 +13,7 @@
                                 @foreach ($sliders as $slider)
                                     <li>
                                         <img src="{{ asset('public/uploads/placeimages/' . $slider->name) }}"
-                                            alt="RIZVIE JEAWLARS" title="RIZVIE JEAWLARS" id="wows1_0" />
+                                            alt="RIZVIE JEAWLARS" title="{{$slider->name}}" id="wows1_0" />
                                     </li>
                                 @endforeach
 
