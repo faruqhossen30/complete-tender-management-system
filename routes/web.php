@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 // Controlles for Fond-end
 
 // Controlles for Admin
-use App\Http\Controllers\BackendController\Admin\place\PlaceController;
+use App\Http\Controllers\BackendController\Admin\Place\PlaceController;
 use App\Http\Controllers\BackendController\Admin\AdminHomeController; //ok
 use App\Http\Controllers\BackendController\Admin\Client\ClientController;
 use App\Http\Controllers\BackendController\Admin\Tender\TenderController; //ok
@@ -41,7 +41,7 @@ Auth::routes(['verify' => true]);
 // For Admin route
 
 Route::middleware(['auth', 'is_admin'])->prefix('admin')->group(function () {
-    Route::get('/', [AdminHomeController::class, 'index']);
+    Route::get('/', [AdminHomeController::class, 'index'])->name('admin.dashboard');
     Route::resource('tender', TenderController::class);
     Route::resource('country', CountryController::class);
     Route::resource('location', LocationController::class);

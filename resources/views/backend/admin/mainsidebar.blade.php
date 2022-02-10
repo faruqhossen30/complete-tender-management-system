@@ -53,29 +53,29 @@
                 {{-- Tender application End --}}
                 <!-- tourism manage  -->
                 <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-users"></i>
-                        <p>
-                            Tourism manage
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
+                    <a href="#" class="nav-link @if (request()->routeIs('place.index', 'place.create', 'place.edit')) active @endif">
+                    <i class="fas fa-users"></i>
+                      <p>
+                        Tourism manage
+                        <i class="right fas fa-angle-left"></i>
+                      </p>
                     </a>
 
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create place</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url('travelback') }}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Manage place</p>
-                            </a>
-                        </li>
+                   <ul class="nav nav-treeview" style="display: @if (request()->routeIs('place.index', 'place.create', 'place.edit')) block @endif">
+                      <li class="nav-item">
+                        <a href="{{route('place.create')}}" class="nav-link  @if (request()->routeIs('place.create')) active @endif">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Create place</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="{{route('place.index')}}" class="nav-link  @if (request()->routeIs('place.index', 'place.edit')) active @endif">
+                          <i class="far fa-circle nav-icon"></i>
+                          <p>Manage place</p>
+                        </a>
+                      </li>
                     </ul>
-                </li>
+                  </li>
                 <!--End tourism manage  -->
                 <!-- Tender management -->
                 <li class="nav-item has-treeview">
