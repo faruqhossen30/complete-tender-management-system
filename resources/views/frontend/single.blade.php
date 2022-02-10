@@ -3,40 +3,93 @@
     <div class="container">
         <div class="col-md-12">
             <div>
-                <!-- Start WOWSlider.com BODY section -->
-                <div class="card-img-actions mb-3">
-                    <img class="card-img img-fluid my-2" src="{{ asset('/public/img/LogoPresentation.jpg') }}" alt="">
-                    <div class="card-img-actions-overlay card-img ">
-                        <a href="blog_single.html"
-                            class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round">
-                            <i class="icon-link"></i>
-                        </a>
+                <div id="wowslider-container1">
+                    <div class="ws_images">
+                        <ul>
+                            <li>
+                                <img src="{{ asset('public/data1/images/rizvie_jeawlars.jpg') }}" alt="RIZVIE JEAWLARS"
+                                    title="RIZVIE JEAWLARS" id="wows1_0" />
+                            </li>
+                            <li>
+                                <img src="{{ asset('public/data1/images/samsung.jpg') }}" alt="SAMSUNG" title="SAMSUNG"
+                                    id="wows1_1" />
+                            </li>
+                            <li>
+                                <img src="{{ asset('public/data1/images/screenshot_1.png') }}" alt="Screenshot_1"
+                                    title="Screenshot_1" id="wows1_2" />
+                            </li>
+                            <li>
+                                <img src="{{ asset('public/data1/images/screenshot_2.png') }}" alt="Screenshot_2"
+                                    title="Screenshot_2" id="wows1_3" />
+                            </li>
+                            <li>
+                                <img src="{{ asset('public/data1/images/screenshot_3.png') }}" alt="Screenshot_3"
+                                    title="Screenshot_3" id="wows1_4" />
+                            </li>
+                            <li>
+                                <a href="http://wowslider.net"><img
+                                        src="{{ asset('public/data1/images/screenshot_4.png') }}" alt="css slideshow"
+                                        title="Screenshot_4" id="wows1_5" /></a>
+                            </li>
+                            <li>
+                                <img src="{{ asset('public/data1/images/screenshot_5.png') }}" alt="Screenshot_5"
+                                    title="Screenshot_5" id="wows1_6" />
+                            </li>
+                        </ul>
                     </div>
+                    <div class="ws_bullets">
+                        <div>
+                            <a href="#" title="RIZVIE JEAWLARS"><span><img
+                                        src="{{ asset('public/data1/tooltips/rizvie_jeawlars.jpg') }}"
+                                        alt="RIZVIE JEAWLARS" />1</span></a>
+                            <a href="#" title="SAMSUNG"><span><img src="{{ asset('public/data1/tooltips/samsung.jpg') }}"
+                                        alt="SAMSUNG" />2</span></a>
+                            <a href="#" title="Screenshot_1"><span><img
+                                        src="{{ asset('public/data1/tooltips/screenshot_1.png') }}"
+                                        alt="Screenshot_1" />3</span></a>
+                            <a href="#" title="Screenshot_2"><span><img
+                                        src="{{ asset('public/data1/tooltips/screenshot_2.png') }}"
+                                        alt="Screenshot_2" />4</span></a>
+                            <a href="#" title="Screenshot_3"><span><img
+                                        src="{{ asset('public/data1/tooltips/screenshot_3.png') }}"
+                                        alt="Screenshot_3" />5</span></a>
+                            <a href="#" title="Screenshot_4"><span><img
+                                        src="{{ asset('public/data1/tooltips/screenshot_4.png') }}"
+                                        alt="Screenshot_4" />6</span></a>
+                            <a href="#" title="Screenshot_5"><span><img
+                                        src="{{ asset('public/data1/tooltips/screenshot_5.png') }}"
+                                        alt="Screenshot_5" />7</span></a>
+                        </div>
+                    </div>
+                    <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">jquery
+                            carousel</a> by WOWSlider.com v9.0</div>
+                    <div class="ws_shadow"></div>
                 </div>
+
+                <!-- End WOWSlider.com BODY section -->
+
 
                 <div class="col">
                     <h5 class="font-weight-semibold mb-1">
-                        <a href="#" class="text-default">Blog post layout #3 with image</a>
+                        <a href="#" class="text-default">{{$place->title}}</a>
                     </h5>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sunt enim itaque ipsam velit,
-                        laudantium illum. Atque velit placeat quia quae tempore, fuga esse facilis! Dolores recusandae aut
-                        nostrum! Dignissimos officiis temporibus qui ea laboriosam praesentium fugit asperiores nisi
-                        repellat ex perspiciatis quibusdam, aliquid eius rem dolore excepturi porro adipisci enim quaerat?
-                        Nam ea hic assumenda unde aliquid, commodi qui nesciunt eveniet dignissimos sit maiores rerum at
-                        sint ipsa repudiandae quae amet cumque dolorum, modi labore eos natus fuga. At quia commodi dolor
-                        magni ratione explicabo tempore? Molestiae ad aperiam quod, aspernatur recusandae animi, aliquid
-                        unde incidunt odit voluptas veritatis!
-                    </p>
+
+                    <ul class="list-inline list-inline-dotted text-muted mb-3">
+                        <li class="list-inline-item"><span class=""><i class="fa fa-map-marker"></i></span> <a href="#" class="text-muted">{{$place->location->name}}</a></li>
+                    </ul>
+                    <hr>
+
+                    <p>{!! Str::substr($place->content,0,200)  !!}</p>
                 </div>
+               
                 <div class="container" style="display: flex">
                     <div class="row">
                         <div class="col">
 
-                                <iframe width="100%" height="560" src="https://www.youtube.com/embed/LfI8_1LwD3Y"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
+                            <iframe width="100%" height="560" src="https://www.youtube.com/embed/LfI8_1LwD3Y"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
 
                         </div>
                         <div class="card ml-2 my-2">
@@ -51,3 +104,11 @@
         </div>
     </div>
 @endsection
+@push('script')
+    <script type="text/javascript" src="{{ asset('public/engine1/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/engine1/wowslider.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/engine1/script.js') }}"></script>
+@endpush
+@push('style')
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/engine1/style.css') }}" />
+@endpush

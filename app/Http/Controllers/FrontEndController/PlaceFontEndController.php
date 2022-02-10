@@ -14,4 +14,10 @@ class PlaceFontEndController extends Controller
         // return $places;
         return view('frontend.blog',compact('places'));
     }
+
+    public function singleplace($id){
+        $place = Place::where('id' , $id)->first();
+        // return  $place;
+        return view('frontend.single',compact('place'));
+    }
 }

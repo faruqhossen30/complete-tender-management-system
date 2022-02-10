@@ -35,7 +35,7 @@
                             <div
                                 class="card-footer bg-transparent d-sm-flex justify-content-sm-between align-items-sm-center border-top-0 pt-0 pb-3">
 
-                                <a href="{{ route('single') }}" class="btn cwl-active text-white">Read more <i
+                                <a href="{{ route('singleplace',$place->id) }}" class="btn cwl-active text-white">Read more <i
                                         class="icon-arrow-right14 ml-2"></i></a>
                             </div>
                         </div>
