@@ -4,6 +4,7 @@ namespace App\Http\Controllers\FrontEndController;
 
 use App\Http\Controllers\Controller;
 use App\Models\Place;
+use App\Models\PlaceImage;
 use Illuminate\Http\Request;
 
 class PlaceFontEndController extends Controller
@@ -16,8 +17,14 @@ class PlaceFontEndController extends Controller
     }
 
     public function singleplace($id){
+
+        $sliders = PlaceImage::where('place_id', $id)->get();
         $place = Place::where('id' , $id)->first();
-        // return  $place;
-        return view('frontend.single',compact('place'));
+
+        // return $sliders;
+
+
+
+        return view('frontend.single',compact('place', 'sliders'));
     }
 }

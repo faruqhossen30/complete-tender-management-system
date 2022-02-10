@@ -21,7 +21,7 @@
 
 
                                 <h5 class="font-weight-semibold mb-1">
-                                    <a href="#" class="text-default">{{$place->title}}</a>
+                                    <a href="{{route('singleplace', $place->id)}}" class="text-default">{{$place->title}}</a>
                                 </h5>
 
                                 <ul class="list-inline list-inline-dotted text-muted mb-3">

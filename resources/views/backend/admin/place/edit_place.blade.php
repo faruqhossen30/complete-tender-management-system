@@ -97,7 +97,7 @@
                                 <div class="form-group">
                                     <div class="form-group">
                                         <label> Video Link </label>
-                                        <input type="url" name="video_link"
+                                        <input type="text" name="video_link"
                                             class="form-control  @error('video_link')is-invalid @enderror"
                                             value="{{ $place->video_link }}">
                                         @error('video_link')
