@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{asset('public/css/cwlcustom.css')}}">
 
     <title>Catalysts Wings Ltd | @yield('title', 'Catalysts Wings Ltd')</title>
+    @stack('style')
   </head>
   <body>
     @include('frontend.layouts.topbar')

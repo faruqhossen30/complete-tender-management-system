@@ -1,53 +1,98 @@
 @extends('frontend.layouts.app')
 @section('body')
     <div class="container">
-        <div class="col-md-12">
-            <div>
-                <!-- Start WOWSlider.com BODY section -->
-                <div class="card-img-actions mb-3">
-                    <img class="card-img img-fluid my-2" src="{{ asset('/public/img/LogoPresentation.jpg') }}" alt="">
-                    <div class="card-img-actions-overlay card-img ">
-                        <a href="blog_single.html"
-                            class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round">
-                            <i class="icon-link"></i>
-                        </a>
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div id="wowslider-container1">
+                        <div class="ws_images">
+                            @php
+                                $serial = 1;
+                            @endphp
+                            <ul>
+                                @foreach ($sliders as $slider)
+                                    <li>
+                                        <img src="{{ asset('public/uploads/placeimages/' . $slider->name) }}"
+                                            alt="RIZVIE JEAWLARS" title="{{$slider->name}}" id="wows1_0" />
+                                    </li>
+                                @endforeach
+
+                            </ul>
+                        </div>
+                        {{-- <div class="ws_bullets">
+                            <div>
+                                @php
+                                    $nuber = 1;
+                                @endphp
+
+                                @foreach ($sliders as $slider)
+                                <a href="#" title="{{$slider->name}}"><span><img
+                                    src="{{ asset('public/uploads/placeimages/'.$slider->name) }}"
+                                    alt="{{$slider->name}}" />{{$nuber++}}</span></a>
+                                @endforeach
+                            </div>
+                        </div> --}}
+
+                        <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">jquery
+                                carousel</a> by WOWSlider.com v9.0</div>
+                        <div class="ws_shadow"></div>
                     </div>
                 </div>
 
-                <div class="col">
-                    <h5 class="font-weight-semibold mb-1">
-                        <a href="#" class="text-default">Blog post layout #3 with image</a>
-                    </h5>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sunt enim itaque ipsam velit,
-                        laudantium illum. Atque velit placeat quia quae tempore, fuga esse facilis! Dolores recusandae aut
-                        nostrum! Dignissimos officiis temporibus qui ea laboriosam praesentium fugit asperiores nisi
-                        repellat ex perspiciatis quibusdam, aliquid eius rem dolore excepturi porro adipisci enim quaerat?
-                        Nam ea hic assumenda unde aliquid, commodi qui nesciunt eveniet dignissimos sit maiores rerum at
-                        sint ipsa repudiandae quae amet cumque dolorum, modi labore eos natus fuga. At quia commodi dolor
-                        magni ratione explicabo tempore? Molestiae ad aperiam quod, aspernatur recusandae animi, aliquid
-                        unde incidunt odit voluptas veritatis!
-                    </p>
+                <!-- End WOWSlider.com BODY section -->
+
+                <div class="row card">
+                    <div class="card-body">
+                        <h5 class="font-weight-semibold mb-1">
+                            <h4 class="text-default">{{ $place->title }}</h4>
+                        </h5>
+
+                        <ul class="list-inline list-inline-dotted text-muted mb-3">
+                            <li class="list-inline-item"><span class=""><i class="fa fa-map-marker"></i></span> <a
+                                    href="#" class="text-muted">{{ $place->location->name }}</a></li>
+                        </ul>
+                        <hr>
+
+                        {!! $place->content !!}
+                    </div>
                 </div>
-                <div class="container" style="display: flex">
                     <div class="row">
-                        <div class="col">
-
-                                <iframe width="100%" height="560" src="https://www.youtube.com/embed/LfI8_1LwD3Y"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
-
+                        <div class="col-md-6" id="youtubevideo">
+                            {{-- {{ strip_tags($place->video_link) }} --}}
+                            {{-- {{ strip_tags($place->video_link) }}
+                             --}}
+                             @php
+                                 strip_tags($place->video_link);
+                             @endphp
                         </div>
-                        <div class="card ml-2 my-2">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58690.22769302754!2d89.15852990207685!3d23.165117979409718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ff108d87ea6d65%3A0x627d034ef93261cf!2z4Kav4Ka24KeL4Kaw!5e0!3m2!1sbn!2sbd!4v1637491103591!5m2!1sbn!2sbd"
-                                width="1060" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        @if($place->google_map)
+                        <div class="col-md-6">
+                            <div class="card" id="googlemap">
+                                {{$place->google_map}}
+                            </div>
                         </div>
+                        @endif
                     </div>
-                </div>
-            </div>
 
+            </div>
         </div>
     </div>
 @endsection
+@push('script')
+    <script type="text/javascript" src="{{ asset('public/engine1/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/engine1/wowslider.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('public/engine1/script.js') }}"></script>
+@endpush
+@push('style')
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/engine1/style.css') }}" />
+    <style>
+        #googlemap iframe{
+            max-width: 100%;
+            max-height: 350px;
+        }
+        #youtubevideo iframe{
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+@endpush

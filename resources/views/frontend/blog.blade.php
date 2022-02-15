@@ -21,7 +21,7 @@
 
 
                                 <h5 class="font-weight-semibold mb-1">
-                                    <a href="#" class="text-default">{{$place->title}}</a>
+                                    <a href="{{route('singleplace', $place->id)}}" class="text-default">{{$place->title}}</a>
                                 </h5>
 
                                 <ul class="list-inline list-inline-dotted text-muted mb-3">
@@ -35,7 +35,7 @@
                             <div
                                 class="card-footer bg-transparent d-sm-flex justify-content-sm-between align-items-sm-center border-top-0 pt-0 pb-3">
 
-                                <a href="{{ route('single') }}" class="btn cwl-active text-white">Read more <i
+                                <a href="{{ route('singleplace',$place->id) }}" class="btn cwl-active text-white">Read more <i
                                         class="icon-arrow-right14 ml-2"></i></a>
                             </div>
                         </div>

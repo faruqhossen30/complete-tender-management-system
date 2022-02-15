@@ -90,7 +90,8 @@ Route::get('/tender/all', [TenderPageController::class, 'allTender'])->name('ten
 Route::get('/tender/national', [TenderPageController::class, 'national'])->name('tender.national');
 Route::get('/tender/international', [TenderPageController::class, 'international'])->name('tender.international');
 Route::get('place', [PlaceFontEndController::class,'allPlace'])->name('place');
-Route::get('single', [SinglePageController::class,'singlePase'])->name('single');
+Route::get('place/{id}', [PlaceFontEndController::class,'singleplace'])->name('singleplace');
+// Route::get('single', [SinglePageController::class,'singlePase'])->name('single');
 // For Testing purpose
 Route::get('/test', [TestController::class, 'index'])->name('test');
 Route::get('/search-tender', [TenderPageController::class, 'searchAction'])->name('search-tender');
