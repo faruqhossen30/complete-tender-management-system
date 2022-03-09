@@ -42,6 +42,9 @@
                     </div>
                 @endforeach
             </div>
+            <div class="my-3">
+                {{ $places->appends($_GET)->links() }}
+            </div>
         </div>
     </div>
 

@@ -44,6 +44,16 @@
 
                     <!-- End WOWSlider.com BODY section -->
 
+<<<<<<< HEAD
+                        {!! $place->content !!}
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col-md-6" id="youtubevideo">
+                             @php
+                                 strip_tags($place->video_link);
+                             @endphp
+=======
                     <div class="row card">
                         <div class="card-body">
                             <h5 class="font-weight-semibold mb-1">
@@ -57,6 +67,7 @@
                             <hr>
 
                             {!! $place->content !!}
+>>>>>>> 111422142f69cc29fef99deb258946cbde04357a
                         </div>
                     </div>
                         <div class="row my-4">
