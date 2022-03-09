@@ -11,7 +11,7 @@ class PlaceFontEndController extends Controller
 {
     public function allPlace(){
         // return "ok";
-        $places = Place::latest()->get();
+        $places = Place::latest()->paginate(9);
         // return $places;
         return view('frontend.blog',compact('places'));
     }
@@ -22,8 +22,6 @@ class PlaceFontEndController extends Controller
         $place = Place::where('id' , $id)->first();
 
         // return $sliders;
-
-
 
         return view('frontend.single',compact('place', 'sliders'));
     }

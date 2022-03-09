@@ -19,19 +19,7 @@
 
                             </ul>
                         </div>
-                        {{-- <div class="ws_bullets">
-                            <div>
-                                @php
-                                    $nuber = 1;
-                                @endphp
 
-                                @foreach ($sliders as $slider)
-                                <a href="#" title="{{$slider->name}}"><span><img
-                                    src="{{ asset('public/uploads/placeimages/'.$slider->name) }}"
-                                    alt="{{$slider->name}}" />{{$nuber++}}</span></a>
-                                @endforeach
-                            </div>
-                        </div> --}}
 
                         <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">jquery
                                 carousel</a> by WOWSlider.com v9.0</div>
@@ -58,9 +46,6 @@
                 </div>
                     <div class="row">
                         <div class="col-md-6" id="youtubevideo">
-                            {{-- {{ strip_tags($place->video_link) }} --}}
-                            {{-- {{ strip_tags($place->video_link) }}
-                             --}}
                              @php
                                  strip_tags($place->video_link);
                              @endphp
