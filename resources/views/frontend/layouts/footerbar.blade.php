@@ -3,7 +3,10 @@
         <div class="row">
             <div class="col">
                 <p class="text-center m-0 text-light">
-                    All Right Reserve @ Catalysts Wints Ltd. - 2021
+                    All Right Reserve @ Catalysts Wints Ltd. @
+                    @php
+                       echo date('Y');
+                    @endphp
                 </p>
             </div>
         </div>

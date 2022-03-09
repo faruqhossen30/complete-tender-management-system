@@ -16,10 +16,12 @@
         </div><!-- /.container-fluid -->
     </section>
     <div class="col-12" style="margin:0 auto;">
-        <div class="card card-secondary">
+        <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Client Management Table</h3> <br>
-
+                <h2 class="card-title">Place Management Table</h2>
+                <div class="card-tools">
+                    <a href="{{route('place.create')}}" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Create</a>
+                </div>
             </div>
             <!-- /.card-header -->
             <div class="card-body table-responsive p-0">

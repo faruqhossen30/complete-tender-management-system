@@ -44,6 +44,7 @@
                         <li><a href="{{route('homepage')}}">Home </a></li>
                         <li><a href="{{route('tender.all')}}">All Tender </a></li>
                         <li><a href="{{route('about')}}">About Us </a></li>
+                        <li><a href="{{route('place')}}">Tourism</a></li>
                         <li><a href="{{route('contact')}}">Contact Us </a></li>
                     </ul>
                 </article>
