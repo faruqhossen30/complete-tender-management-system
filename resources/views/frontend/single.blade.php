@@ -47,6 +47,7 @@
                     <div class="row card">
                         <div class="card-body">
                             <h5 class="font-weight-semibold mb-1">
+
                                 <h4 class="text-default">{{ $place->title }}</h4>
                             </h5>
 
