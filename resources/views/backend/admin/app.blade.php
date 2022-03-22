@@ -74,6 +74,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('public/js/bs-custom-file-input.min.js')}}"></script>
 <script src="{{asset('public/js/adminlte.min.js')}}"></script>
 <script src="{{asset('public/js/demo.js')}}"></script>
+<script src="{{asset('public/js/jquery.validate.min.js')}}"></script>
 @stack('js')
 </body>
 </html>

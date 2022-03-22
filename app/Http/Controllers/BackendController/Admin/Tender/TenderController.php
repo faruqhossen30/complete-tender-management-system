@@ -52,6 +52,9 @@ class TenderController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'tenderID' => 'required |unique:tenders'
+        ]);
         $data = [
             'tenderID'      => $request->tenderID,
             'tender_type_id'   => $request->type,

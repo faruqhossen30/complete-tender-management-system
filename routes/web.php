@@ -15,6 +15,7 @@ use App\Http\Controllers\BackendController\Admin\Tender\TypeController; // ok
 use App\Http\Controllers\BackendController\Admin\Tender\DepartmentController; // ok
 use App\Http\Controllers\BackendController\User\UserHomeController;
 use App\Http\Controllers\BackendController\Admin\Client\ClientDocumentController;
+use App\Http\Controllers\BackendController\Ajax\TenderAjaxController;
 
 // Client Applictions
 use App\Http\Controllers\BackendController\Admin\Tender\Application\ClientApplicationsController;
@@ -92,6 +93,8 @@ Route::get('/tender/international', [TenderPageController::class, 'international
 Route::get('place', [PlaceFontEndController::class,'allPlace'])->name('place');
 Route::get('place/{id}', [PlaceFontEndController::class,'singleplace'])->name('singleplace');
 // Route::get('single', [SinglePageController::class,'singlePase'])->name('single');
+
+Route::get('checktenderid', [TenderAjaxController::class,'tenderIdChecker'])->name('checktenderid');
 // For Testing purpose
 Route::get('/test', [TestController::class, 'index'])->name('test');
 Route::get('/search-tender', [TenderPageController::class, 'searchAction'])->name('search-tender');
