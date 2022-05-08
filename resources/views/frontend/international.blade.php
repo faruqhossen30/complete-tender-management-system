@@ -31,7 +31,7 @@
                                             {{-- <li class="list-inline-item">Start:{{$tender->created_at}}</li> --}}
                                             <li class="list-inline-item">Deadline :{{$tender->lastDate}}</li>
                                             <li class="list-inline-item" style="font-size: 16px;"> &nbsp; &nbsp; &nbsp;
-                                                    3 Days 6 Hours
+                                                    {{-- 3 Days 6 Hours --}}
                                             </li>
                                         </ul>
                                         <div class="">
@@ -56,7 +56,7 @@
                                         </li>
                                         @if (isset($tender->tenderLocation->name))
                                         <li class="list-inline-item">
-                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> 
+                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span>
                                                 {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                         </li>
                                         @endif
@@ -108,7 +108,7 @@
                                             {{-- <li class="list-inline-item">Start:{{$tender->created_at }}</li> --}}
                                             <li class="list-inline-item">Deadline :{{$tender->lastDate}}</li>
                                             <li class="list-inline-item" style="font-size: 16px;"> &nbsp; &nbsp; &nbsp;
-                                                3 Days 6 Hours
+                                                {{-- 3 Days 6 Hours --}}
                                             </li>
                                         </ul>
                                         <div class="">
@@ -138,7 +138,7 @@
                                         </li>
                                         @if (isset($tender->tenderLocation->name))
                                         <li class="list-inline-item">
-                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> 
+                                            <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span>
                                                 {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                         </li>
                                         @endif
@@ -162,9 +162,9 @@
                                     <ul class="list-inline" style="font-size: 13px;">
                                         <li class="list-inline-item">Tender ID : {{$tender->tenderID}} </li>
                                         {{-- <li class="list-inline-item">Start : {{ \Carbon\Carbon::parse( $tender->created_at )->format('d-M-y') }}</li> --}}
-                                        <li class="list-inline-item">Deadline : {{ \Carbon\Carbon::parse( $tender->lastDate )->format('d-M-y') }}</li>
+                                        <li class="list-inline-item">Deadline : {{ \Carbon\Carbon::parse( $tender->lastDate )->format('d-M-Y') }}</li>
                                         <li class="list-inline-item" style="font-size: 16px;"> &nbsp; &nbsp; &nbsp;
-                                                3 Days 6 Hours
+                                                {{-- 3 Days 6 Hours --}}
                                         </li>
                                     </ul>
                                     <div class="">
@@ -186,7 +186,7 @@
                                     </li>
                                     @if (isset($tender->tenderLocation->name))
                                     <li class="list-inline-item">
-                                        <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span> 
+                                        <a href="#" class="text-secondary"> <span class=""><i class="fa fa-compass"></i></span>
                                             {{$tender->tenderLocation->name ?? "N/a"}} </a>
                                     </li>
                                     @endif
